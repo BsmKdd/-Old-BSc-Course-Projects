@@ -1,0 +1,250 @@
+*{
+    font-family: 'Oswald', Helvetica, Arial, Lucida, sans-serif;
+}
+
+nav{
+    position: fixed;
+    background: rgba(128, 0, 128, 0.9);
+    padding: 0px 20px;
+    z-index: 2;
+}
+
+nav li a:hover
+{
+    background-color: #a800a8;
+}
+
+
+section[name="headerSection"]
+{
+    /* background-image: url(tempImages/stockback.jpg); */
+    background-size: cover;
+    width: 100%;
+    height: 800px;
+    text-align: center;
+}
+
+
+section div[name="headerTextWrapper"]
+{
+    width: 100%;
+    margin-right: auto;
+    padding: 15px;
+}
+
+section div[name="headerTextWrapper"] h1{
+    margin-top: auto;
+}
+
+section div[name="headerTextWrapper"] .btn-large{
+    margin-top: auto;
+    
+}
+
+section[name="sectionTwo"]
+{
+    background-image: linear-gradient(#ffffff, #929292);
+    font-family: serif;
+    padding: 1% 5% 2% 5%;
+    text-justify: auto;
+}
+
+
+section[name="sectionTwo"] p
+{
+    font-size: 20px;
+}
+
+
+section[name="sectionThree"]
+{
+    
+    background-size: cover;
+    width: 100%;
+    height: 800px;
+    text-align: center;
+    display: block;
+    padding-top: 40px;
+}
+
+section[name="sectionThree"] h3
+{
+    margin-bottom: 70px;
+}
+
+section[name="sectionThree"] ul li
+{
+    list-style-type: circle;
+    text-decoration: white;
+    margin-bottom: 5px;
+}
+
+section[name="sectionThree"] div[name="sectionThreeText"]
+{
+    font-size: 18px;
+    text-align: center;
+}
+
+section[name="sectionFour"]
+{
+    background-image: linear-gradient(#ffffff, #f0f0f0);
+}
+
+section[name="sectionFour"] div
+{
+    height: auto;
+    text-align: center;
+}
+
+section[name="sectionFour"] div img
+{
+    border-radius: 350px;
+    width: 350px;
+    height: 300px;
+    text-align: center;
+}
+
+section[name="sectionFour"] a, section[name="sectionFour"] i
+{
+    color: #a800a8 !important;
+}
+
+section[name="sectionFive"]
+{
+    background-image: linear-gradient(#f0f0f0, #e0e0e0);
+}
+
+section[name="sectionFive"] i
+{
+    color: #a800a8;
+}
+
+section[name="sectionFive"] p
+{
+    font-size: 17px;
+}
+
+section[name="sectionSix"] 
+{
+    background-image: linear-gradient(#e0e0e0, #f2f1f0);
+    padding-top: 10px;
+}
+
+footer #facebook:hover
+{
+    color: #395693;
+}
+
+footer #twitter:hover
+{
+    color: #2daae1;
+}
+
+footer #instagram:hover
+{
+    color: #f29a50;
+}
+
+
+
+a, a:hover{
+    color: white;
+}
+
+#formContainer
+{
+  margin-top: 100px;
+}
+
+#signUpDiv
+{
+    background-color: white;
+}        
+/* label color */
+.input-field label {
+    color: #a800a8;
+}
+/* label focus color */
+.input-field input:focus + label, 
+.input-field textarea:focus + label {
+    color: #a800a8 !important;
+}
+/* label underline focus color */
+
+
+.input-field input:focus, 
+.input-field textarea:focus {
+    border-bottom: 1px solid #a800a8 !important;
+    box-shadow: 0 1px 0 0 #a800a8 !important;
+}
+/* valid color */
+.input-field input.valid{
+    border-bottom: 1px solid #dd00dd !important;
+    box-shadow: 0 1px 0 0 #dd00dd !important;
+}
+/* invalid color */
+/* .input-field input.invalid {
+    border-bottom: 1px solid rgb(255, 0, 0) !important;
+    box-shadow: 0 1px 0 0 rgb(255, 0, 0) !important;
+} */
+/* icon prefix focus color */
+.input-field .prefix.active {
+    color: #000;
+}
+
+select option 
+{
+  color: #a800a8 !important;
+}
+
+.dropdown-content li > a, 
+.dropdown-content li > span
+{
+  color: #a800a8;
+}
+
+[type="radio"]:checked + span::after, 
+[type="radio"].with-gap:checked + span::after 
+{
+  background-color: #a800a8;
+}
+[type="radio"]:checked + span::after,
+[type="radio"].with-gap:checked + span::before, 
+[type="radio"].with-gap:checked + span::after 
+{
+  border: 2px solid #a800a8;
+}
+#modal-signup 
+{ 
+    max-height: 85% !important ;
+    border: none;
+}
+
+#modal-login
+{
+    height: auto;
+}
+
+.dropdown-content{
+    max-height: 450px; 
+}
+
+#account-dropdown li a:hover
+{
+    background-color: transparent;
+}
+
+
+a, a:hover{
+    color: white;
+}
+.parallax-container 
+{
+    height: 100vh;
+    width: 100%;
+}
+
+div[href="https://www.000webhost.com/?utm_source=000webhostapp&utm_campaign=000_logo&utm_medium=website&utm_content=footer_img"]
+{
+    display: none;
+}

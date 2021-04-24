@@ -1,0 +1,33 @@
+
+body
+{
+    background-color: rgb(230, 230, 230);
+}
+
+.container
+{
+    background-color: rgb(255, 255, 255);
+    border: 1px solid rgb(187, 187, 187);
+
+}
+a, a:focus, a:hover, a:active
+{
+    color:white;
+    text-decoration: none;
+}
+
+.nav-link, .nav-link:hover
+{
+    color: black;
+}
+
+textarea
+{
+    resize: none;
+}
+
+.img-min
+{
+    width: 20%;
+    min-width: 40px;
+}

@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="bootstrap-4.3.1-dist/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+    <link type="text/css" rel="stylesheet" href="css/about.css"  media="screen,projection"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>About Us</title>
+</head>
+<body>
+    <nav class="nav-wrapper">
+        <a href="index.html" class="brand-logo center"><img style="margin-top: -20px !important; height: 60px !important;"  src="tempImages/LogoMakr_27qblP.png" alt=""></a>
+        <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+        <ul class="right hide-on-med-and-down">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="team.html">Our Team</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a id="login"class="waves-effect waves-light purple btn-small modal-trigger logged-out" style="display: none;"data-target="modal-login">Login</a></li>
+            <li><a class="waves-effect waves-light purple btn-small modal-trigger logged-out" style="display: none;" data-target="modal-signup">Sign Up</a></li>
+              <!-- Dropdown Trigger -->
+            <li id="image-dropdown" class="dropdown-trigger ml-1 logged-in" style="display: none;" href='#' data-target='account-dropdown'><img id="profile-image" src="" style="height: 50px; border-radius: 50%;"></li>
+    
+            <!-- Dropdown Structure -->
+        </ul>
+    
+        <ul id='account-dropdown' class='dropdown-content'>
+            <li><a href="profile.php">Profile</a></li>
+            <li><a id="logout" href="#!">Logout</a></li>
+            <!-- <li><a id="logout" class="waves-effect waves-light purple btn-small logged-in" style="display: none;">Logout</a></li> -->
+            <!-- <li><a href="#!"><i class="material-icons">cloud</i>five</a></li> -->
+        </ul>
+    
+    </nav>
+    <div class="sidenav center-align "  id="mobile-demo">
+        <ul class="my-auto">
+        <!-- <div class=""> -->
+                <a class="logged-in my-auto" style="display: none;" href='profile.php'><img id="profile-image-side" class="mb-5 mt-5" src="" style="height: 150px; border-radius: 50%;" ></a>
+                <li><a href="profile.php">Profile</a></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="team.html">Our Team</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+                <li><a id="loginSide" class="waves-effect waves-light purple btn-small modal-trigger logged-out" style="display: none;"data-target="modal-login">Login</a></li>
+                <li><a id="logoutSide" class="waves-effect waves-light purple btn-small modal-trigger logged-in" href="#!">Logout</a></li>
+        <!-- </div> -->
+        </ul>
+    </div>
+    
+
+    <div class="row">
+        <div class="containerAbout col-12 col-md-8">
+            <div class="row" style="margin-bottom: 0 !important;">             
+                <div class="innerContainer col-12">
+                    <div class="col col-12">
+                        <h5 class="text-center" style="font-weight: bold; color: #800080; font-size: 23px;">ABOUT GymName AND ITS FOUNDER</h5>
+                        <p style="font-size: 18px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi labore architecto iusto aut tempora maxime vero magnam ipsam excepturi. Deserunt rem, odio voluptate sint ipsa nihil dolores repellat exercitationem amet corrupti nulla eum odit? Accusamus id voluptate voluptas temporibus porro dolore nobis quod placeat ipsum ducimus repudiandae nemo obcaecati neque repellendus dolor earum facere fugiat ex eos aliquid, nisi itaque ratione? Libero expedita inventore repellat cumque, odio provident dolorem. Provident consequatur placeat animi quibusdam distinctio!</p>     
+                    </div>  
+                    <img class="col-12 col" src="tempImages/jeffcavalierbanner.jpg" style="border-radius: 8%;" alt="">  
+                    <div class="col col-12">
+                        <h5 class="text-center" style="font-weight: bold; color: #800080; font-size: 23px;">HOW DID WE GET HERE</h5>
+                        <p style="font-size: 18px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi labore architecto iusto aut tempora maxime vero magnam ipsam excepturi. Deserunt rem, odio voluptate sint ipsa nihil dolores repellat exercitationem amet corrupti nulla eum odit? Accusamus id voluptate voluptas temporibus porro dolore nobis quod placeat ipsum ducimus repudiandae nemo obcaecati neque repellendus dolor earum facere fugiat ex eos aliquid, nisi itaque ratione? Libero expedita inventore repellat cumque, odio provident dolorem. Provident consequatur placeat animi quibusdam distinctio!</p>     
+                    </div>  
+                    <img class="col-12 col" src="tempImages/IMG_1274_2-1920x1080.jpg" style="border-radius: 8%;"   alt="">  
+                    <div class="col col-12">
+                        <h5 class="text-center" style="font-weight: bold; color: #800080; font-size: 23px;">WHAT DO WE PROVIDE?</h5>
+                        <p style="font-size: 18px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi labore architecto iusto aut tempora maxime vero magnam ipsam excepturi. Deserunt rem, odio voluptate sint ipsa nihil dolores repellat exercitationem amet corrupti nulla eum odit? Accusamus id voluptate voluptas temporibus porro dolore nobis quod placeat ipsum ducimus repudiandae nemo obcaecati neque repellendus dolor earum facere fugiat ex eos aliquid, nisi itaque ratione? Libero expedita inventore repellat cumque, odio provident dolorem. Provident consequatur placeat animi quibusdam distinctio!</p>     
+                    </div>  
+                    <img class="col-12 col" src="tempImages/5bdb22336b201.jpeg" style="border-radius: 8%;"   alt="">  
+                    
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-login" class="modal p-0 col-lg-4 col-12" style="height: auto !important;">
+        <div class="modal-content" style="padding: 15px 5px 5px 5px !important;">
+            <h3 style="color:#a800a8 ;" class="mb-3 mx-auto">Log in</h3>
+            <form id="loginForm" class="mx-1 mx-sm-5" autocomplete="off">
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input id="loginEmail" type="email" class="validate" data-length="150" maxlength="150" required customError>
+                        <label for="loginEmail">Email</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input id="loginPassword" type="password" class="validate" data-length="20" maxlength="20" required customError> 
+                        <label for="loginPassword">Password</label>
+                    </div>
+                </div>
+                <div class="row mb-0">
+                    <div class="input-field col col-12 text-right">
+                        <button class="btn-large waves-effect  waves-light purple white-text"  type="submit" name="action">
+                        Login
+                        </button>
+                    </div>
+                </div>
+                <p class="error pink-text center-align"></p>
+            </form>
+        </div>
+    </div>
+
+
+
+
+    
+    <footer class="page-footer purple z-depth-2">
+        <div class="container">
+            <div class="row">
+            <div class="col l4 s12">
+                <h5 class="white-text">FOLLOW US</h5>
+                <a href="#" id="facebook"><i class="fab fa-facebook-square fa-2x"></i></a>
+                <a href="#" id="twitter"><i class="fab fa-twitter-square fa-2x"></i></a>
+                <a href="#" id="instagram"><i class="fab fa-instagram-square fa-2x"></i></a>
+    
+            </div>
+    
+            <div class="col l4 s12 push-l1">
+                <h5 class="white-text ">CONTACT</h5>
+                <ul>
+                    <li><span class="font-weight-bold">EMAIL: </span>myGym@gym.gym</li>
+                    <li class="mb-2 mt-2"><span class="font-weight-bold">PHONE: </span>(961) 71111000</li>
+                    <li><span class="font-weight-bold">ADDRESS: </span>Sidon, Sidon Street</li>
+                </ul>
+            </div>
+    
+            <div class="col l4 s12 push-l2">
+                <h5 class="white-text ">NAVIGATE</h5>
+                <ul>
+                <li><a class="grey-text text-lighten-3" href="index.html">Home</a></li>
+                <li><a class="grey-text text-lighten-3" href="team.html">Our Team</a></li>
+                <li><a class="grey-text text-lighten-3" href="about.html">About</a></li>
+                <li><a class="grey-text text-lighten-3" href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <div class="container center-align">
+            © 2020 Copyright Text
+            </div>
+        </div>
+        </footer>
+      <!-- The core Firebase JS SDK is always required and must be listed first -->
+      <script src="https://www.gstatic.com/firebasejs/7.13.0/firebase-app.js"></script>
+    
+      <!-- TODO: Add SDKs for Firebase products that you want to use
+          https://firebase.google.com/docs/web/setup#available-libraries -->
+      <script src="https://www.gstatic.com/firebasejs/7.13.0/firebase-analytics.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/7.13.0/firebase-auth.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/7.13.0/firebase-firestore.js"></script>
+    
+      <script>
+      // Your web app's Firebase configuration
+      var firebaseConfig = {
+          apiKey: "AIzaSyBWk2mYsYjV3bxSBZj5MKy5Knh-LJapTzg",
+          authDomain: "mygym-97497.firebaseapp.com",
+          databaseURL: "https://mygym-97497.firebaseio.com",
+          projectId: "mygym-97497",
+          storageBucket: "mygym-97497.appspot.com",
+          messagingSenderId: "1073663096495",
+          appId: "1:1073663096495:web:2a1b9b5090163f1300c65a",
+          measurementId: "G-TPKR8TE6MN"
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      firebase.analytics();
+    
+      //auth and firestore references
+      const auth = firebase.auth();
+      const db = firebase.firestore();
+    
+    
+      </script>
+      <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+      <script type="text/javascript" src="js/materialize.min.js"></script>
+      <script type="text/javascript" src="scripts/profileAuth.js"></script>
+      <script type="text/javascript" src="scripts/about.js"></script>
+      <script src="https://kit.fontawesome.com/ebcbd60fef.js" crossorigin="anonymous"></script>
+
+</body>
+</html>

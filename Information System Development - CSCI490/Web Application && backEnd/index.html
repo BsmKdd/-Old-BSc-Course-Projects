@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>     
+    <!-- Google's Icons -->
+    <link href="bootstrap-4.3.1-dist/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+    <link type="text/css" rel="stylesheet" href="css/index.css"  media="screen,projection"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style type="text/css">
+    .modal .row
+    {
+        margin-bottom: 0;
+    }
+
+    .modal
+    {
+        border-radius: 15px;
+    }
+    </style>
+    <title>Home</title>
+</head>
+
+
+
+
+
+<body>
+<nav class="nav-wrapper">
+    <a href="index.html" class="brand-logo center"><img style="margin-top: -20px !important; height: 60px !important;"  src="tempImages/LogoMakr_27qblP.png" alt=""></a>
+    <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+    <ul class="right hide-on-med-and-down">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="team.html">Our Team</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+        <li><a id="login"class="waves-effect waves-light purple btn-small modal-trigger logged-out" style="display: none;"data-target="modal-login">Login</a></li>
+        <li><a class="waves-effect waves-light purple btn-small modal-trigger logged-out" style="display: none;" data-target="modal-signup">Sign Up</a></li>
+
+          <!-- Dropdown Trigger -->
+        <li id="image-dropdown" class="dropdown-trigger ml-1 logged-in" style="display: none;" href='#' data-target='account-dropdown'><img id="profile-image" src="" style="height: 50px; border-radius: 50%;"></li>
+
+        <!-- Dropdown Structure -->
+    </ul>
+
+    <ul id='account-dropdown' class='dropdown-content'>
+        <li><a href="profile.php">Profile</a></li>
+        <li><a id="logout" href="#!">Logout</a></li>
+        <!-- <li><a id="logout" class="waves-effect waves-light purple btn-small logged-in" style="display: none;">Logout</a></li> -->
+        <!-- <li><a href="#!"><i class="material-icons">cloud</i>five</a></li> -->
+    </ul>
+
+</nav>
+<div class="sidenav center-align "  id="mobile-demo">
+    <ul class="my-auto">
+    <!-- <div class=""> -->
+            <a class="logged-in my-auto" style="display: none;" href='profile.php'><img id="profile-image-side" class="mb-5 mt-5" src="" style="height: 150px; border-radius: 50%;" ></a>
+            <li><a href="profile.php" class="logged-in">Profile</a></li>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="team.html">Our Team</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a id="loginSide" class="waves-effect waves-light purple btn-small modal-trigger logged-out" style="display: none;"data-target="modal-login">Login</a></li>
+            <li><a class="waves-effect waves-light purple btn-small modal-trigger logged-out" style="display: none;"data-target="modal-signup">Sign Up</a></li>
+            <li><a id="logoutSide" class="waves-effect waves-light purple btn-small modal-trigger logged-in" href="#!">Logout</a></li>
+    <!-- </div> -->
+    </ul>
+</div>
+
+
+<div class="parallax-container">
+    <div class="parallax">
+        <img id="parallaxHeader" class="responsive-img" style="max-width: 101%;" alt="">
+    </div>
+    <section name="headerSection" class="white-text valign-wrapper z-depth-4">
+        <div name="headerTextWrapper" id="headerTextWrapper">
+            <h1>Why put off feeling good?</h1>
+            <a style="display:none" class="waves-effect waves-light purple btn-large modal-trigger logged-out" data-target="modal-signup">Join Now</a>
+        </div>
+    </section>
+</div>
+
+<section name="sectionTwo" class="center-align">
+    <h3>Lorem ipsum dolor sit amet.</h3>
+    <p style="margin-left: 10%; margin-right: 10%;">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatum placeat voluptate aut dolorem quasi vitae laudantium voluptates laborum suscipit? Dolores, facilis! Delectus inventore incidunt, qui eligendi fugit cupiditate, necessitatibus nisi asperiores quibusdam iusto possimus accusantium distinctio, dicta maiores quis doloremque?</p>
+</section>
+
+<div class="parallax-container">
+    <div class="parallax">
+        <img src="tempImages/sitebg1.jpg" alt="">
+    </div>
+    <section name="sectionThree" class="valign-wrapper white-text mx-auto z-depth-4">
+        <h3 class="font-weight-bold">The best part of your day - everyday!</h3>
+        <div class="row" name="sectionThreeText">
+            <span class="col-sm-2 col-1 col-xsm-2"></span>
+            <p  class="col-lg-5 d-none d-lg-block  text-left">
+                We promise to be the best part of your day - everyday! 
+                <br><br>
+                Whether you want to drop a few kilos, feel better and more energetic, improve your performance or prepare to compete for a national or world championship, StrengthHQ can help turn your dreams into a reality.
+                <br><br>
+                Our vision is to help motivate, guide and inspire you by providing a gym that encompasses: camaraderie, team work, work ethic, commitment to purpose, achievement and a positive, supportive atmosphere.
+                <br><br>
+                Every inch of our 800+ square metres is designed to work for YOU; from functional battle ropes, prowlers, sleds, tyres to state of the art Hammer Strength equipment, Bootcamps, Powerlifting and Olympic lifting platforms including a fully equipped Pilates studio.
+            </p>
+            <ul class="col-lg-4 col-10 pl-sm-5 pl-2 text-left">
+                <li>Extensive free weight area</li>
+                <li>Olympic Weightlifting platforms and equipment</li>
+                <li>Powerlifting platforms and equipment</li>
+                <li>Four power racks</li>
+                <li>Dumbbells up to 50kg</li>
+                <li>Kettlebells</li>
+                <li>Strongman training equipment</li>
+                <li>Large group training area</li>
+                <li>Plyometrics equipment</li>
+                <li>Speed and agility equipment</li>
+                <li>Comprehensive cardiovascular equipment</li>
+                <li>Stretching and core training area</li>
+                <li>Bathroom, shower and changing facilities</li>
+            </ul>
+        </div>
+    </section>
+</div>
+
+<section name="sectionFour" class="container-fluid" > 
+    <h2 class="center-align mt-5 mb-3">Meet The Team </h2>
+    <div class="row justify-content-center">
+        <div class="col-sm-6 col-lg-3 col-12 ">
+          <div class="card">
+            <div class="card-image">
+              <img src="TrainerImages/Profiles/jounaidalsaadiprofile.jpg">
+            </div>
+            <span class="card-title mb-0">Jounaid Al-Saadi</span>
+            <div class="card-content">
+              <p>I am a very simple card. I am good at containing small bits of information.
+              I am convenient because I require little markup to use effectively.</p>
+            </div>
+           
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-3 col-12 d-sm-block d-none">
+          <div class="card">
+            <div class="card-image">
+              <img src="TrainerImages/Profiles/jounaidalsaadiprofile.jpg">
+            </div>
+            <span class="card-title mb-0">Jounaid Al-Saadi</span>
+            <div class="card-content">
+              <p>I am a very simple card. I am good at containing small bits of information.
+              I am convenient because I require little markup to use effectively.</p>
+            </div>
+           
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-3 col-12 d-lg-block d-none">
+          <div class="card">
+            <div class="card-image">
+              <img src="TrainerImages/Profiles/jounaidalsaadiprofile.jpg">
+            </div>
+            <span class="card-title mb-0">Jounaid Al-Saadi</span>
+            <div class="card-content">
+              <p>I am a very simple card. I am good at containing small bits of information.
+              I am convenient because I require little markup to use effectively.</p>
+            </div>
+           
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-3 col-12 d-lg-block d-none">
+            <div class="card">
+                <div class="card-image">
+                    <img src="TrainerImages/Profiles/jounaidalsaadiprofile.jpg">
+                </div>
+                <span class="card-title mb-0">Jounaid Al-Saadi</span>
+                <div class="card-content">
+                    <p>I am a very simple card. I am good at containing small bits of information.
+                    I am convenient because I require little markup to use effectively.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="pr-3 pb-3 text-right">
+        <a class="text-right" style="font-size: 20px;" href="team.html">Meet The Full Team <i class="fas fa-angle-double-right fa-large"></i></a>
+    </div>
+</section>
+
+
+<section name="sectionFive">
+    <div class="row mb-0 pt-5">
+        <div class="col-md-4 col-12 offset-lg-1">
+            <img src="tempImages/phone.png" alt="">
+        </div>
+
+        <div class="col-md-4 col-12 offset-md-3 offset-lg-1">
+            <h1 class="font-weight-bold">GET <span style="font-weight: bold; color: #a800a8;">myGym</span></h1>
+            <p class="mb-5" style="font-size: 18px;">Get the myGym app, the ultimate workout companion that will take your training experience to another level. 
+                <br> All of our members are granted access to our exclusive mobile application for a smooth training experience.</p>
+
+            <div>
+                <i class="fas fa-check fa-lg mb-3"></i>
+                <p class="d-inline ml-2">Track your workouts.</p>
+            </div>
+            <div>
+                <i class="fas fa-check fa-lg mb-3"></i>
+                <p class="d-inline ml-2">Customize your own workouts.</p>
+            </div>
+            <div>
+                <i class="fas fa-check fa-lg mb-3"></i>
+                <p class="d-inline ml-2">Ask a coach to assign you a workout.</p>
+            </div>
+            <div>
+                <i class="fas fa-check fa-lg mb-3"></i>
+                <p class="d-inline ml-2">Scan the equipments to learn about them.</p>
+            </div>
+            <div>
+                <i class="fas fa-check fa-lg mb-3"></i>
+                <p class="d-inline ml-2">Request assistance while working out.</p>
+            </div>
+            <div>
+                <i class="fas fa-check fa-lg mb-3"></i>
+                <p class="d-inline ml-2">Order from our bar.</p>
+            </div>
+            
+        </div>
+    </div>
+
+</section>
+
+<section name="sectionSix" class="center-align">   
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1662.489742632067!2d35.37296790652794!3d33.55390933336858!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x151ef03988c80541%3A0xb229cd317fed89f1!2sLebanese%20International%20University%2C%20Saida%20Campus!5e0!3m2!1sen!2slb!4v1585786601170!5m2!1sen!2slb" width="100%" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+</section>
+
+<div id="modal-login" class="modal p-0 col-lg-4 col-12" style="height: auto !important;">
+    <div class="modal-content" style="padding: 15px 5px 5px 5px !important;">
+        <form id="loginForm" class="mx-1 mx-sm-5" autocomplete="off">
+            <div class="row">
+                <div class="input-field col s12">
+                    <input id="loginEmail" type="email" class="validate" data-length="150" maxlength="150" required customError>
+                    <label for="loginEmail">Email</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <input id="loginPassword" type="password" class="validate" data-length="20" maxlength="20" required customError> 
+                    <label for="loginPassword">Password</label>
+                </div>
+            </div>
+            <div class="row mb-0">
+                <div class="input-field col col-12 text-right">
+                    <button class="btn waves-effect  waves-light purple white-text w-100"  type="submit" name="action">
+                    Login
+                    </button>
+                </div>
+            </div>
+            <p class="center-align" ><a href="#" id="forgotPasswordURL" style="color: #a800a8 !important;">Forgot Password?</a></p>
+            <p class="error pink-text center-align"></p>
+        </form>
+
+        <form id="forgotPasswordForm" action="" method="post" class="mx-1 mx-sm-5 d-none" autocomplete="off">
+            <div class="row">
+                <h5 class="col text-center" style="font-weight: bold;">Reset Your Password</h5>
+            </div>
+            <div class="row">
+                <p class="col text-center">An e-mail will be sent to you with instructions on how to reset your password.</p>
+            </div>
+            <div class="row" style="margin-bottom: 0;">
+                <div class="input-field col s12">
+                    <input id="emailReset" type="email" name="email" class="validate" data-length="150" maxlength="150" required customError>
+                    <label for="emailReset">Email</label>
+                </div>
+            </div>
+            <div class="row mb-0">
+                <div class="input-field col col-12 text-right">
+                    <button class="btn waves-effect  waves-light purple white-text w-100"  type="submit" name="resetPasswordRequest">
+                    Reset
+                    </button>
+                </div>
+            </div>
+            <div class="row">
+                <p id="responseMessage" class="col text-center">
+                </p>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+
+<div id="modal-signup" class="modal">
+    <div class="modal-content p-0 p-sm-2">
+        <h3 style="color:#a800a8 ;" class="mb-3 mx-auto d-none d-sm-block">Sign Up</h3>
+        <form id="signupForm" class="mx-1 mx-sm-5" autocomplete="off">
+            <div class="row">
+            <div class="input-field col s6">
+                <input id="first_name" type="text" class="validate" data-length="50" maxlength="50" required customError>
+                <label for="first_name">First Name</label>
+            </div>
+            <div class="input-field col s6">
+                <input id="last_name" type="text" class="validate" data-length="50" maxlength="50" required customError> 
+                <label for="last_name">Last Name</label>
+            </div>
+            </div>
+            <div class="row">
+            <div class="input-field col s12">
+                <input id="email" type="email" class="validate" data-length="150" maxlength="150" required customError>
+                <label for="email">Email</label>
+            </div>
+            </div>
+            <div class="row">
+            <div class="input-field col s6">
+                <input id="password" type="password" class="validate" data-length="20" maxlength="20" required customError> 
+                <label for="password">Password</label>
+            </div>
+            <div class="input-field col s6">
+                <input id="confirmPassword" type="password" class="validate" data-length="20" maxlength="20" required customError>
+                <label for="confirmPassword">Confirm password</label>
+            </div>
+            </div>
+            <div class="row">
+            <div class="input-field col col-5 col-md-3">
+                <select id="countryCode" name="countryCode" required customError>
+                </select>
+                <label>Country</label>
+                </div>
+            <div class="input-field col col-7 col-md-9">
+                <input id="telephone" type="tel" class="validate form-control" data-length="20" maxlength="20" required customError>
+                <label for="telephone">Telephone</label>
+            </div>
+            </div>             
+            <div class="row mb-0">
+                <div class="input-field col col-12">
+                <textarea id="address" class="materialize-textarea" data-length="150" maxlength="150" required customError></textarea>
+                <label for="address">Address</label>
+                </div>
+            </div>
+    
+            <h6 class="text-left" style="padding-left: 0.75em;">Subscription Plan:</h6>
+            <div class="row">
+              <p>
+                <label class="col black-text">
+                  <input id="oneMonths" value="1" class="with-gap " name="plan" type="radio" required/>
+                  <span>1 month <br> 45$</span>
+                </label>
+              </p>
+              <p>
+                <label class="col black-text">
+                  <input id="threeMonths" value="3" class="with-gap " name="plan" type="radio" />
+                  <span>3 months <br> 120$</span>
+                </label>
+              </p>
+              <p>
+                <label class="col black-text">
+                  <input id="twelveMonths" value="12" class="with-gap " name="plan" type="radio"  />
+                  <span>12 months <br> 400$</span>
+                </label>
+              </p>
+            </div>
+            <p class="error pink-text center-align"></p>
+            <div class="row">
+                <div class="input-field col col-12 text-right">
+                    <button class="btn-large waves-effect  waves-light purple white-text" onclick="return checkForm()" type="submit" name="action">
+                    Register<i class="material-icons right">done</i>
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+
+  
+<footer class="page-footer purple z-depth-2">
+    <div class="container">
+        <div class="row">
+        <div class="col l4 s12">
+            <h5 class="white-text">FOLLOW US</h5>
+            <a href="#" id="facebook"><i class="fab fa-facebook-square fa-2x"></i></a>
+            <a href="#" id="twitter"><i class="fab fa-twitter-square fa-2x"></i></a>
+            <a href="#" id="instagram"><i class="fab fa-instagram-square fa-2x"></i></a>
+
+        </div>
+
+        <div class="col l4 s12 push-l1">
+            <h5 class="white-text ">CONTACT</h5>
+            <ul>
+                <li><span class="font-weight-bold">EMAIL: </span>myGym@gym.gym</li>
+                <li class="mb-2 mt-2"><span class="font-weight-bold">PHONE: </span>(961) 71111000</li>
+                <li><span class="font-weight-bold">ADDRESS: </span>Sidon, Sidon Street</li>
+            </ul>
+        </div>
+
+        <div class="col l4 s12 push-l2">
+            <h5 class="white-text ">NAVIGATE</h5>
+            <ul>
+                <li><a class="grey-text text-lighten-3" href="index.html">Home</a></li>
+                <li><a class="grey-text text-lighten-3" href="team.html">Our Team</a></li>
+                <li><a class="grey-text text-lighten-3" href="about.html">About</a></li>
+                <li><a class="grey-text text-lighten-3" href="contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+        </div>
+    </div>
+    <div class="footer-copyright">
+        <div class="container center-align">
+        © 2020 Copyright Text
+        </div>
+    </div>
+    </footer>
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/7.13.0/firebase-app.js"></script>
+
+  <!-- TODO: Add SDKs for Firebase products that you want to use
+      https://firebase.google.com/docs/web/setup#available-libraries -->
+  <script src="https://www.gstatic.com/firebasejs/7.13.0/firebase-analytics.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.13.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.13.0/firebase-firestore.js"></script>
+
+  <script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+      apiKey: "AIzaSyBWk2mYsYjV3bxSBZj5MKy5Knh-LJapTzg",
+      authDomain: "mygym-97497.firebaseapp.com",
+      databaseURL: "https://mygym-97497.firebaseio.com",
+      projectId: "mygym-97497",
+      storageBucket: "mygym-97497.appspot.com",
+      messagingSenderId: "1073663096495",
+      appId: "1:1073663096495:web:2a1b9b5090163f1300c65a",
+      measurementId: "G-TPKR8TE6MN"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+
+  //auth and firestore references
+  const auth = firebase.auth();
+  const db = firebase.firestore();
+
+  </script>
+  <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+  <script type="text/javascript" src="js/materialize.min.js"></script>
+    <script type="text/javascript" src="scripts/index.js"></script>
+  <script type="text/javascript" src="scripts/auth.js"></script>
+  <script src="https://kit.fontawesome.com/ebcbd60fef.js" crossorigin="anonymous"></script>
+</body>
+
+
+</html>
+

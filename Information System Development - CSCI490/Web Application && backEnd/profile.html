@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>     
+    <!-- Google's Icons -->
+    <link href="bootstrap-4.3.1-dist/css/bootstrap.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="fontawesome-free-5.12.1-web/css/all.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+    <link type="text/css" rel="stylesheet" href="css/profile.css"  media="screen,projection"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+
+
+    <style>  
+
+        *{
+            font-family: 'Oswald', Helvetica, Arial, Lucida, sans-serif;
+        }
+    
+        nav{
+            background: rgba(128, 0, 128, 0.9);
+            padding: 0px 20px;
+            z-index: 2;
+        }
+    
+        nav li a:hover
+        {
+            background-color: #a800a8;
+        }    
+    
+        a, a:hover{
+            color: white;
+        }
+
+        #formContainer
+        {
+          margin-top: 100px;
+        }
+
+        .nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+        color: #a800a8;
+        background-color: transparent !important;
+        border-left: 2px solid #a800a8 !important;
+        border-radius: 0px !important;
+        }
+
+        a, a:hover{
+            color: white;
+        }
+    
+    </style>
+
+
+
+    <title>Home</title>
+
+</head>
+
+<body>  
+    <nav class="nav-wrapper">
+        <a href="index.php" class="brand-logo">Logo</a>
+        <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+        <ul class="right hide-on-med-and-down">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Our Team</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact Us</a></li>
+            <li><a id="login"class="waves-effect waves-light purple btn-small modal-trigger logged-out" style="display: none;"data-target="modal-login">Login</a></li>
+              <!-- Dropdown Trigger -->
+            <li id="image-dropdown" class="dropdown-trigger ml-1 logged-in" style="display: none;" href='#' data-target='account-dropdown'><img id="profile-image" src="" style="height: 50px; border-radius: 50%;"></li>
+    
+            <!-- Dropdown Structure -->
+        </ul>
+    
+        <ul id='account-dropdown' class='dropdown-content'>
+            <li><a href="profile.html">Profile</a></li>
+            <li><a id="logout" href="#!">Logout</a></li>
+            <!-- <li><a id="logout" class="waves-effect waves-light purple btn-small logged-in" style="display: none;">Logout</a></li> -->
+            <!-- <li><a href="#!"><i class="material-icons">cloud</i>five</a></li> -->
+        </ul>
+    
+    </nav>
+    
+    <ul class="sidenav center-align" id="mobile-demo">
+        <li><a class="mb-3 mt-3 logged-in" style="display: none;" href='profile.html'><img id="profile-image-side" src="" style="height: 50px; border-radius: 50%;" ></a></li>
+        <li><a href="profile.html">Profile</a></li>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Our Team</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact Us</a></li>
+        <li><a id="loginSide" class="waves-effect waves-light purple btn-small modal-trigger logged-out" style="display: none;"data-target="modal-login">Login</a></li>
+        <li><a id="logoutSide" class="logged-in" href="#!">Logout</a></li>
+    </ul>
+
+<div class="container">
+    <div class="row profile">
+		<div class="col-md-3">
+			<div class="profile-sidebar">
+				<!-- SIDEBAR USERPIC -->
+				<div class="profile-userpic center-align">
+					<img id="profile-image-account" src="" class="img-responsive" alt="">
+				</div>
+				<!-- END SIDEBAR USERPIC -->
+				<!-- SIDEBAR USER TITLE -->
+				<div class="profile-usertitle">
+					<div class="profile-usertitle-name">
+						Marcus Doe
+					</div>
+					<div class="profile-usertitle-job">
+						Member
+					</div>
+				</div>
+				<!-- END SIDEBAR USER TITLE -->
+				<!-- SIDEBAR BUTTONS -->
+				<div class="profile-userbuttons">
+					<a class="waves-effect waves-light purple btn-small white-text mx-2">Upload Profile Picture</a>
+				</div>
+				<!-- END SIDEBAR BUTTONS -->
+				<!-- SIDEBAR MENU -->
+				<div class="profile-usermenu " id="pills-tab" role="tablist">
+					<ul class="nav nav-pills">
+						<li class="nav-item">
+							<a  class=" nav-link  active" id="pills-home-tab" data-toggle="tab" href="#home"  >
+                            <i class="tiny material-icons">home</i>
+							<span >Overview</span> </a>
+						</li>
+						<li class="nav-item">
+							<a  class="nav-link" id="pills-settings-tab" data-toggle="pill" href="#settings" role="tab" aria-controls="pills-home" aria-selected="true" >
+                            <i class="tiny material-icons">account_circle</i>
+							Account Settings </a>
+						</li>
+						<li class="nav-item">
+							<a  class="nav-link" id="pills-workout-tab" data-toggle="pill" href="#workout" role="tab" aria-controls="pills-profile" aria-selected="false">
+                            <i class="tiny material-icons">watch_later</i>
+							Previous Workouts </a>
+                        </li>
+                        <li class="nav-item">
+							<a  class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#contact" role="tab" aria-controls="pills-contact" aria-selected="false">
+                            <i class="tiny material-icons">perm_phone_msg</i>
+							Contact </a>
+						</li>
+                    </ul>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-9">
+            <div class="tab-content" id="v-pills-tabContent">
+                <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="v-pills-home-tab">home</div>
+                <div class="tab-pane fade" id="settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">settings</div>
+                <div class="tab-pane fade" id="workout" role="tabpanel" aria-labelledby="v-pills-workout-tab">workout</div>
+                <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="v-pills-contact-tab">contact</div>
+              </div>
+		</div>
+	</div>
+</div>
+<br>
+<br>
+
+
+
+
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.13.0/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+        https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/7.13.0/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.13.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.13.0/firebase-firestore.js"></script>
+
+    <script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+        apiKey: "AIzaSyBWk2mYsYjV3bxSBZj5MKy5Knh-LJapTzg",
+        authDomain: "mygym-97497.firebaseapp.com",
+        databaseURL: "https://mygym-97497.firebaseio.com",
+        projectId: "mygym-97497",
+        storageBucket: "mygym-97497.appspot.com",
+        messagingSenderId: "1073663096495",
+        appId: "1:1073663096495:web:2a1b9b5090163f1300c65a",
+        measurementId: "G-TPKR8TE6MN"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    firebase.analytics();
+
+    //auth and firestore references
+    const auth = firebase.auth();
+    const db = firebase.firestore();
+
+    </script>
+    
+    <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="js/materialize.min.js"></script>
+    <script type="text/javascript" src="bootstrap-4.3.1-dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="scripts/profileAuth.js"></script>
+    <script type="text/javascript" src="scripts/profile.js"></script>
+
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<footer class="page-footer purple z-depth-2">
+    <div class="container">
+      <div class="row">
+        <div class="col l4 s12">
+            <h5 class="white-text">FOLLOW US</h5>
+            <a href="#"><i class="fab fa-facebook-square fa-2x"></i></a>
+            <a href="#"><i class="fab fa-twitter-square fa-2x"></i></a>
+            <a href="#"><i class="fab fa-instagram-square fa-2x"></i></a>
+
+        </div>
+
+        <div class="col l4 s12 push-l1">
+            <h5 class="white-text ">CONTACT</h5>
+            <ul>
+                <li><span class="font-weight-bold">EMAIL: </span>myGym@gym.gym</li>
+                <li class="mb-2 mt-2"><span class="font-weight-bold">PHONE: </span>(961) 71111000</li>
+                <li><span class="font-weight-bold">ADDRESS: </span>Sidon, Sidon Street</li>
+            </ul>
+        </div>
+
+        <div class="col l4 s12 push-l2">
+          <h5 class="white-text ">NAVIGATE</h5>
+          <ul>
+            <li><a class="grey-text text-lighten-3" href="#!">Home</a></li>
+            <li><a class="grey-text text-lighten-3" href="#!">Our Team</a></li>
+            <li><a class="grey-text text-lighten-3" href="#!">About</a></li>
+            <li><a class="grey-text text-lighten-3" href="#!">Contact Us</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container center-align">
+        © 2020 Copyright Text
+      </div>
+    </div>
+  </footer>
+</html>
+

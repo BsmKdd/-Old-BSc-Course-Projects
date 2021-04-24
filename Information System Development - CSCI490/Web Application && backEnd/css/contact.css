@@ -1,0 +1,129 @@
+*{
+    font-family: 'Oswald', Helvetica, Arial, Lucida, sans-serif;
+}
+@media screen and (max-width: 480px) 
+{
+  body{
+      min-height: 100vh; /* will cover the 100% of viewport */
+      overflow: auto;
+      display: block;
+      position: relative;
+      padding-bottom: 450px; /* height of your footer */
+      background-color: #F1F3FA;
+
+  }
+
+  footer
+  {
+      position: absolute;
+      bottom: 0;
+      width: auto;
+  }
+}
+@media screen and (min-width: 481px) {
+  body{
+      min-height: 100vh; /* will cover the 100% of viewport */
+      overflow: auto;
+      display: block;
+      position: relative;
+      padding-bottom: 248px; /* height of your footer */
+      background-color: #f1f3fa;
+  }
+}
+
+
+nav{
+    background: rgba(128, 0, 128, 0.9);
+    padding: 0px 20px;
+    z-index: 2;
+}
+
+nav li a:hover
+{
+    background-color: #a800a8;
+}
+
+.contactForm {
+    background-color: white;
+    margin: 60px auto;
+    padding: 20px 0;
+    border-radius: 10px;
+}
+
+.row
+{
+    margin-bottom: 0px !important;
+}
+
+
+footer
+{
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+footer #facebook:hover
+{
+    color: #395693;
+}
+
+footer #twitter:hover
+{
+    color: #2daae1;
+}
+
+footer #instagram:hover
+{
+    color: #f29a50;
+}
+
+.input-field input:focus + label, 
+.input-field textarea:focus + label {
+  color: #a800a8 !important;
+}
+
+
+a, a:hover{
+    color: white;
+}
+.dropdown-content li > a, 
+.dropdown-content li > span
+{
+color: #a800a8;
+}
+
+.dropdown-content{
+  max-height: 450px; 
+}
+
+#account-dropdown li a:hover
+{
+  background-color: transparent;
+}
+
+.input-field input:focus, 
+.input-field textarea:focus {
+    border-bottom: 1px solid #a800a8 !important;
+    box-shadow: 0 1px 0 0 #a800a8 !important;
+}
+/* valid color */
+.input-field input.valid{
+    border-bottom: 1px solid #dd00dd !important;
+    box-shadow: 0 1px 0 0 #dd00dd !important;
+}
+
+.input-field .prefix.active {
+    color: #000;
+}
+
+#messageContent
+{
+  height: 12rem !important;
+  overflow: auto;
+}
+
+div[href="https://www.000webhost.com/?utm_source=000webhostapp&utm_campaign=000_logo&utm_medium=website&utm_content=footer_img"]
+{
+    display: none;
+}

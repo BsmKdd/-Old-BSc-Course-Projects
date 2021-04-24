@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>     
+    <!-- Google's Icons -->
+    <link rel="stylesheet" href="fontawesome-free-5.12.1-web/css/all.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+    <link href="bootstrap-4.3.1-dist/css/bootstrap.min.css" rel="stylesheet"/>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+
+
+    <style>  
+        *{
+            font-family: 'Oswald', Helvetica, Arial, Lucida, sans-serif;
+        }
+
+        nav{
+          margin-top: -100px;
+          position: fixed;
+          background: rgba(128, 0, 128, 0.9);
+          padding: 0px 20px;
+          z-index: 2;
+        }
+        
+
+    
+        nav li a:hover
+        {
+            background-color: #a800a8;
+        }
+
+        #formContainer
+        {
+          margin-top: 100px;
+        }
+
+        #signUpDiv
+        {
+            background-color: white;
+        }        
+        /* label color */
+        .input-field label {
+            color: #a800a8;
+        }
+        /* label focus color */
+        .input-field input:focus + label, 
+        .input-field textarea:focus + label {
+            color: #a800a8 !important;
+        }
+        /* label underline focus color */
+        
+
+        .input-field input:focus, 
+        .input-field textarea:focus {
+            border-bottom: 1px solid #a800a8 !important;
+            box-shadow: 0 1px 0 0 #a800a8 !important;
+        }
+        /* valid color */
+        .input-field input.valid{
+            border-bottom: 1px solid #dd00dd !important;
+            box-shadow: 0 1px 0 0 #dd00dd !important;
+        }
+        /* invalid color */
+        /* .input-field input.invalid {
+            border-bottom: 1px solid rgb(255, 0, 0) !important;
+            box-shadow: 0 1px 0 0 rgb(255, 0, 0) !important;
+        } */
+        /* icon prefix focus color */
+        .input-field .prefix.active {
+            color: #000;
+        }
+
+        select option 
+        {
+          color: #a800a8 !important;
+        }
+
+        .dropdown-content li > a, 
+        .dropdown-content li > span
+        {
+          color: #a800a8;
+        }
+
+        [type="radio"]:checked + span::after, 
+        [type="radio"].with-gap:checked + span::after 
+        {
+          background-color: #a800a8;
+        }
+        [type="radio"]:checked + span::after,
+        [type="radio"].with-gap:checked + span::before, 
+        [type="radio"].with-gap:checked + span::after 
+        {
+          border: 2px solid #a800a8;
+        }
+
+        a, a:hover{
+            color: white;
+        }
+    </style>
+
+    <title>Signup</title>
+    
+</head>
+
+
+<body>
+
+  <nav class="nav-wrapper">
+    <a href="index.php" class="brand-logo">Logo</a>
+    <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+    <ul class="right hide-on-med-and-down">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Our Team</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact Us</a></li>
+        <a href="index.html"class="waves-effect waves-light purple btn-small">Login</a>
+    </ul>
+</nav>
+
+<ul class="sidenav" id="mobile-demo">
+    <li><a href="#">Home</a></li>
+    <li><a href="#">Our Team</a></li>
+    <li><a href="#">About</a></li>
+    <li><a href="#">Contact Us</a></li>
+    <li><a href="index.html" class="waves-effect waves-light purple btn-small">Login</a></li>
+</ul>
+
+
+<div id="formContainer" class="container">
+  <div id="signUpDiv" class="z-depth-1 text-center mx-auto mt-sm-5 mb-5 p-5 col-lg-8 col-12">	
+    <h3 style="color:#a800a8 ;" class="font-weight-bold mb-5">Sign Up</h3>
+    <div class="row">
+      <form class="col s12" autocomplete="off">
+        <div class="row">
+          <div class="input-field col s6">
+            <input id="first_name" type="text" class="validate" data-length="50" maxlength="50" required customError>
+            <label for="first_name">First Name</label>
+          </div>
+          <div class="input-field col s6">
+            <input id="last_name" type="text" class="validate" data-length="50" maxlength="50" required customError> 
+            <label for="last_name">Last Name</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s12">
+            <input id="email" type="email" class="validate" data-length="150" maxlength="150" required customError>
+            <label for="email">Email</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s6">
+            <input id="password" type="password" class="validate" data-length="20" maxlength="20" required customError> 
+            <label for="password">Password</label>
+          </div>
+          <div class="input-field col s6">
+            <input id="confirmPassword" type="password" class="validate" data-length="20" maxlength="20" required customError>
+            <label for="confirmPassword">Confirm password</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col col-md-3">
+              <select id="countryCode" name="countryCode" required customError>
+              </select>
+              <label>Country</label>
+            </div>
+          <div class="input-field col col-md-9">
+            <input id="telephone" type="tel" class="validate form-control" data-length="20" maxlength="20" required customError>
+            <label for="telephone">Telephone</label>
+          </div>
+        </div>             
+          <div class="row mb-0">
+            <div class="input-field col col-12">
+              <textarea id="address" class="materialize-textarea" data-length="150" maxlength="150" required customError></textarea>
+              <label for="address">Address</label>
+            </div>
+         </div>
+        </div>
+
+        <h6 class="text-left">Subscription Plan:</h6>
+        <div class="row">
+          <p>
+            <label class="col black-text">
+              <input id="oneMonths" class="with-gap " name="plan" type="radio" required/>
+              <span>1 month</span>
+              <br>
+              45$
+            </label>
+          </p>
+          <p>
+            <label class="col black-text">
+              <input id="threeMonths" class="with-gap " name="plan" type="radio" />
+              <span>3 months</span>
+              <br>
+              120$
+            </label>
+          </p>
+          <p>
+            <label class="col black-text">
+              <input id="twelveMonths" class="with-gap " name="plan" type="radio"  />
+              <span>12 months</span>
+              <br>
+              400$
+            </label>
+          </p>
+        </div>
+        <div class="row">
+          <div class="input-field col col-12 text-right">
+            <button class="btn-large waves-effect  waves-light purple white-text" onclick="return checkForm()" type="submit" name="action">
+              Register<i class="material-icons right">done</i>
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+        
+
+
+    <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="js/materialize.min.js"></script>
+    <script type="text/javascript">
+         
+        $(document).ready(function()
+        {
+            $('.sidenav').sidenav();
+        })
+
+        $(document).ready(function(){
+          
+        });
+       
+        $(document).ready(function() {
+          $('textarea#address').characterCounter();
+        });
+
+        let countryCode= document.getElementById('countryCode');
+
+      
+      
+      $.getJSON('js/countries.json', function(data)
+      {
+        var country = null;
+
+        let defaultOption = document.createElement('option');
+        defaultOption.text = 'LB (961)';
+        defaultOption.value = '(961)';
+
+        countryCode.add(defaultOption);
+        countryCode.selectedIndex = 0;
+
+        for( var i = 0; i < data.length; i++ )
+        { 
+          option = document.createElement("option");
+          option.style.color = ''
+          option.text = data[i].code + " " + data[i].dialCode;
+          option.value = data[i].dialCode;
+          countryCode.add(option);
+          console.log(option)
+        } 
+        $('select').formSelect();
+        });
+
+
+
+
+
+        emailReady = false;
+        passwordReady = false;
+        passwordConfirmReady = false;
+
+        var email = document.getElementById('email');
+        // email.addEventListener('change', checkEmail);
+
+        email.addEventListener('change', mailFormat);
+        email.addEventListener('focusout', mailFormat);
+        function mailFormat()
+        {
+          var emailVal = email.value;
+          var filter = /([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+          if (!filter.test(emailVal)) 
+          {
+            email.setCustomValidity("Invalid email");
+            email.reportValidity();
+            emailReady = false;
+          } else {
+            email.setCustomValidity("");
+            email.reportValidity();
+            emailReady = true;
+          }
+        };
+
+        var password = document.getElementById('password');
+        password.addEventListener('focus', passwordFormat);
+        password.addEventListener('change', passwordCheck);
+        password.addEventListener('focusout', passwordCheck);
+
+        function passwordFormat()
+        {
+          password.setCustomValidity("6-20 characters with at least 1 digit, lower and UPPER case letters.");
+          password.reportValidity();
+        };
+
+        function passwordCheck()
+        {
+          var passw = password.value;
+          
+          var letter = /[a-z]/;
+          var letterUp= /[A-Z]/;
+          var number = /[0-9]/;
+
+          if(passw.length < 6 || !letter.test(passw) || !number.test(passw) || !letterUp.test(passw)) 
+          {
+            password.reportValidity();
+            passwordReady = false;
+
+          } else {
+            password.setCustomValidity('');
+            passwordReady = true;
+          }
+        };
+
+
+        var passwordConfirm = document.getElementById('confirmPassword');
+        passwordConfirm.addEventListener('change', passwordConfirmCheck);
+        passwordConfirm.addEventListener('focusout', passwordConfirmCheck);
+
+        function passwordConfirmCheck()
+        {
+          passw = password.value;
+          passw2 = passwordConfirm.value; 
+          if(passw != passw2)
+          {	
+            passwordConfirm.setCustomValidity("Passwords do not match");
+            passwordConfirm.reportValidity();
+            passwordConfirmReady = false;
+          } else {
+            passwordConfirm.setCustomValidity('');
+            passwordConfirm.reportValidity();
+            passwordConfirmReady = true;
+          }
+        };
+
+        // var emailSubmit = false;
+
+        // function checkEmail(e)
+        // {
+        //   e.preventDefault();
+        //       emailWritten = email.value;
+        //       jsonObject = JSON.stringify(emailWritten);
+        //       var xhr = new XMLHttpRequest();
+        //       xhr.open('POST','signupEmailAction.php',true);
+        //       xhr.setRequestHeader('Content-type','application/x-www-form-urlencoded');
+        //       xhr.send("jsonEmail=" + jsonObject);
+
+        //   xhr.onload = function()
+        //   {
+        //     if(this.status === 200)
+        //     {
+        //       var emailExists = JSON.parse(this.responseText);
+              
+        //       if(emailExists)
+        //       {
+        //         email.setCustomValidity("This email already exists.");
+        //         email.reportValidity();
+        //       } else {
+        //         email.setCustomValidity("");
+        //         emailSubmit = true;
+        //       }
+        //     }
+        //   }
+        // }
+
+        function checkForm()
+        {
+          mailFormat();
+          passwordCheck();
+          passwordConfirmCheck();
+          
+          // if(!emailSubmit)
+          // {
+          //   email.setCustomValidity("This email already exists.");
+          //   email.reportValidity();
+          //   return false;
+          // }
+
+          if(emailReady && passwordReady && passwordConfirmReady)
+          {
+            return true;
+          } else {
+            return false;
+          }
+        }
+            
+      </script>
+
+</body>
+
+
+<footer class="page-footer purple z-depth-2">
+  <div class="container">
+    <div class="row">
+      <div class="col l4 s12">
+          <h5 class="white-text">FOLLOW US</h5>
+          <a href="#"><i class="fab fa-facebook-square fa-2x"></i></a>
+          <a href="#"><i class="fab fa-twitter-square fa-2x"></i></a>
+          <a href="#"><i class="fab fa-instagram-square fa-2x"></i></a>
+
+      </div>
+
+      <div class="col l4 s12 push-l1">
+          <h5 class="white-text ">CONTACT</h5>
+          <ul>
+              <li><span class="font-weight-bold">EMAIL: </span>myGym@gym.gym</li>
+              <li class="mb-2 mt-2"><span class="font-weight-bold">PHONE: </span>(961) 71111000</li>
+              <li><span class="font-weight-bold">ADDRESS: </span>Sidon, Sidon Street</li>
+          </ul>
+      </div>
+
+      <div class="col l4 s12 push-l2">
+        <h5 class="white-text ">NAVIGATE</h5>
+        <ul>
+          <li><a class="grey-text text-lighten-3" href="#!">Home</a></li>
+          <li><a class="grey-text text-lighten-3" href="#!">Our Team</a></li>
+          <li><a class="grey-text text-lighten-3" href="#!">About</a></li>
+          <li><a class="grey-text text-lighten-3" href="#!">Contact Us</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footer-copyright">
+    <div class="container center-align">
+      © 2020 Copyright Text
+    </div>
+  </div>
+</footer>
+
+</html>

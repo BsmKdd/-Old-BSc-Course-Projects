@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">BassamProject</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string-array name="semesters">
+        <item>Semester:</item>
+        <item>Winter/Fall</item>
+        <item>Spring</item>
+        <item>Summer</item>
+    </string-array>
+    <string-array name="number">
+        <item>Number:</item>
+        <item>First Exam</item>
+        <item>Midterm Exam</item>
+        <item>Final Exam</item>
+    </string-array>
+</resources>

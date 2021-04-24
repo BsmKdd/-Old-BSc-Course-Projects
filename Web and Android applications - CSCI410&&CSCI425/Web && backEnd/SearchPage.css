@@ -1,0 +1,57 @@
+body
+{
+    background-color: rgb(230, 230, 230);
+}
+
+.container
+{
+    background-color: rgb(255, 255, 255);
+    border: 1px solid rgb(187, 187, 187);
+
+}
+
+.page-item.active .page-link 
+{
+    z-index: 1;
+    color: white;
+    background-color:#51a9c4;
+    border-color:#51a9c4;
+}
+
+.page-link 
+{
+    position: relative;
+    display: block;
+    padding: .5rem .75rem;
+    margin-left: -1px;
+    line-height: 1.25;
+    color:#51a9c4;
+    background-color:#fff;
+    border: 1px solid #dee2e6;
+}
+
+.page-link:hover
+{
+    color:#51a9c4;
+}
+
+.dataTables_filter
+{
+    text-align: right !important;
+}
+
+.dataTables_filter label
+{
+    text-align: left !important;
+}
+td a
+{
+    cursor: pointer;
+}
+
+.pagination
+{
+    text-align: right !important;
+}
+
+

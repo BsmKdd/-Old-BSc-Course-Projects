@@ -1,0 +1,194 @@
+<link href="bootstrap-4.3.1-dist/css/bootstrap.min.css" rel="stylesheet"/>
+<script type="text/javascript" src="bootstrap-4.3.1-dist/js/jquery-3.4.1.min.js"></script>
+<script type="text/javascript" src="bootstrap-4.3.1-dist/js/bootstrap.min.js"></script>
+<link href="signup.css" rel="stylesheet"/>
+
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible"` content="ie=edge">
+	<title>Signup</title>
+</head>
+<body>
+	<div class="container">
+		<div id="loginDiv" class="shadow text-center mx-auto mt-sm-5 mt-1 p-5 col-lg-6 col-md-8 col-sm-10 col-12">	
+			<h3 class="font-weight-bold mb-5">Sign Up</h3>
+			<form action="signupAction.php" method="post">
+				<div class=" row form-group">
+					<div class="col-6"><input name="fName" id="fName" type="text" class="form-control" placeholder="First name" autocomplete="off" maxlength=20 required ></div>
+					<div class="col-6"><input name="lName" id="lName" type="text" class="form-control" placeholder="Last name" autocomplete="off" maxlength=20 required ></div>
+				</div>
+				<div class=" row form-group">
+					<div class="col-12"><input name="username" id="username" type="text" class="form-control" placeholder="Username" autocomplete="off" maxlength=25 required ></div>
+				</div>
+				<div class="row form-group">
+					<div class="col-12"><input name="email" id="email" type="email" class="form-control"  autocomplete="off" placeholder="Enter email" maxlength=50></div>
+				</div>
+				<div class="row form-group">
+					<div class="col-12">
+						<select name="university" class="form-control" required>
+							<option value="">Select University</option>
+							<option value="LIU">Lebanese International University</option>
+							<option value="AUB">American University of Beirut</option>
+							<option value="LAU">Lebanese Ameircan University</option>
+							<option value="AUST">American University of Science and Technology</option>
+						</select>
+					</div>
+				</div>
+				<div class="row form-group">
+					<div class="col-6"><input name="password" id="password" type="password" class="form-control"  placeholder="Password" maxlength=20  onfocus="passRequirement()" onblur="passRequirement()"  ></div>
+					<div class="col-6"><input name="confirmPassword" id="confirmPassword" type="password" class="form-control"  placeholder="Confirm Password" maxlength=20></div>
+					<p  id="confirmWarning" class="d-none text-danger mt-1 col-12">Passwords do not match.</p>
+				</div>
+				<button  type="submit" class="btn btn-info col-12" onclick="return check_form()">Submit</button>
+			</form>
+			<hr>
+			<p>Already have an account? <a href="login.php">Log In</a></p>
+		</div>
+	</div>
+</body>
+</html>
+
+<script>
+
+	var email = document.getElementById('email');
+	email.addEventListener('change', checkEmail);
+
+	var username = document.getElementById('username');
+	username.addEventListener('change', checkUsername)
+	
+	var usernameSubmit = false;
+	var emailSubmit = false;
+
+	function checkEmail(e)
+	{
+		e.preventDefault();
+        emailWritten = email.value;
+        jsonObject = JSON.stringify(emailWritten);
+        var xhr = new XMLHttpRequest();
+        xhr.open('POST','signupEmailAction.php',true);
+        xhr.setRequestHeader('Content-type','application/x-www-form-urlencoded');
+        xhr.send("jsonEmail=" + jsonObject);
+
+		xhr.onload = function()
+		{
+			if(this.status === 200)
+            {
+                var emailExists = JSON.parse(this.responseText);
+				
+				if(emailExists)
+				{
+					email.setCustomValidity("This email already exists.");
+					email.reportValidity();
+				} else {
+					email.setCustomValidity("");
+					emailSubmit = true;
+				}
+            }
+		}
+	}
+
+	function checkUsername(e)
+	{
+		e.preventDefault();
+        usernameWritten = username.value;
+        jsonObject = JSON.stringify(usernameWritten);
+        var xhr = new XMLHttpRequest();
+        xhr.open('POST','signupUsernameAction.php',true);
+        xhr.setRequestHeader('Content-type','application/x-www-form-urlencoded');
+        xhr.send("jsonUsername=" + jsonObject);
+
+		xhr.onload = function()
+		{
+			if(this.status === 200)
+            {
+                var usernameExists = JSON.parse(this.responseText);
+				
+				if(usernameExists)
+				{
+					username.setCustomValidity("This username is taken.");
+					username.reportValidity();
+				} else {
+					username.setCustomValidity("");
+					usernameSubmit = true;
+				}
+            }
+		}
+	}
+
+	function passRequirement()
+	{
+		var isFocused = document.activeElement;
+		if(document.getElementById('password') == isFocused)
+		{
+		document.getElementById('password').setCustomValidity("6-20 characters with at least 1 digit, lower and UPPER case letters.");
+		document.getElementById('password').reportValidity();
+		} else {
+			document.getElementById('password').setCustomValidity("");
+		}
+	}
+
+	function check_form()
+	{
+		var passw = document.getElementById('password').value;
+		var passw2 = document.getElementById('confirmPassword').value;
+		
+		var letter = /[a-z]/;
+		var letterUp= /[A-Z]/;
+		var number = /[0-9]/;
+
+		if(passw.length < 6 || !letter.test(passw) || !number.test(passw) || !letterUp.test(passw)) 
+		{
+			document.getElementById('password').setCustomValidity("6-20 characters with at least 1 digit, lower and UPPER case letters.");
+			document.getElementById('password').reportValidity();
+			return false;
+		} else {
+			document.getElementById('password').setCustomValidity("");
+
+		}
+
+		if(passw != passw2)
+		{	
+			document.getElementById('confirmPassword').setCustomValidity("Passwords do not match");
+			document.getElementById('confirmPassword').reportValidity();
+			return false;
+		} else {
+			document.getElementById('confirmPassword').setCustomValidity("");
+
+		}
+
+		//Username test
+
+		//Username test
+		var emailVal = email.value;
+		var filter = /([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+		if (!filter.test(emailVal)) 
+		{
+			document.getElementById('email').setCustomValidity("Invalid email");
+			document.getElementById('email').reportValidity();
+			return false;
+		} else {
+			document.getElementById('email').setCustomValidity("");
+		}
+		
+		if(!emailSubmit)
+		{
+			email.setCustomValidity("This email already exists.");
+			email.reportValidity();
+			return false;
+		}
+
+		if(!usernameSubmit)
+		{
+			username.setCustomValidity("This username is taken.");
+			username.reportValidity();
+			return false;
+		}
+	return true;
+	}
+</script>
+
+
+
