@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>myGym Desktop</title>
+
+    <script>window.$ = window.jQuery = require('./js/jquery-3.4.1.min.js');</script>
+    <!-- materialize stylesheet & icon font -->
+    <link rel="stylesheet" href="bootstrap-4.3.1-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <!-- materialize theme -->
+    <link rel="stylesheet" href="css/materialize.min.css"> 
+    <link type="text/css" rel="stylesheet" href="css/login.css"  media="screen,projection"/>
+    
+    
+
+</head>
+<body>
+    <div class="row" style="margin-top: 20vh;">
+        <div id="formContainer" class="shadow col col-lg-6 col-md-8 col-sm-10 col-12 mx-auto text-center">
+            <h3 style="color:#a800a8 ;" class="mb-3">Log in</h3>
+            <form id="loginForm" class="mx-1 mx-sm-5" autocomplete="off">
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input id="loginEmail" type="email" class="validate" data-length="150" maxlength="150" customError>
+                        <label for="loginEmail">Email</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input id="loginPassword" type="password" class="validate" data-length="20" maxlength="20"  customError> 
+                        <label for="loginPassword">Password</label>
+                    </div>
+                </div>
+                <div class="row mb-0">
+                    <div class="input-fiel col  text-right">
+                        <button class="btn-large waves-effect col-12 right waves-light purple white-text"  type="submit" name="action">
+                            Login
+                        </button>
+                    </div>
+                </div>
+                <p class="error pink-text center-align"></p>
+            </form>
+        </div>
+    </div>
+    
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.14.0/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+        https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/7.14.0/firebase-auth.js"></script>
+
+    <script type="text/javascript" src="js/login.js"></script>
+    <script type="text/javascript" src="js/materialize.min.js"></script>
+
+
+
+
+</body>
+</html>

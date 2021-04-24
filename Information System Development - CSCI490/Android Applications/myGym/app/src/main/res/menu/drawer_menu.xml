@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_menu">
+
+    <!--    These are similar to nav tabs, you click them and they stay active (selected)-->
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_workouts"
+            android:icon="@drawable/ic_weight_lifter"
+            android:title="Workouts" />
+<!--        <item-->
+<!--            android:id="@+id/nav_assist"-->
+<!--            android:icon="@drawable/ic_handshake"-->
+<!--            android:title="Assist Me!" />-->
+        <item
+            android:id="@+id/nav_scanMachine"
+            android:icon="@drawable/ic_qrcode_scan"
+            android:title="Scan a Machine!" />
+        <item
+            android:id="@+id/nav_order"
+            android:icon="@drawable/ic_order_bool_ascending"
+            android:title="Order" />
+        <item
+            android:id="@+id/nav_PT"
+            android:icon="@drawable/ic_account_cash"
+            android:title="Hire a Trainer!" />
+    </group>
+
+    <item android:title="Stay in touch!">
+        <menu>
+            <group android:checkableBehavior="single">
+<!--                <item-->
+<!--                    android:id="@+id/nav_contact"-->
+<!--                    android:icon="@drawable/ic_contact"-->
+<!--                    android:title="Contact Us!" />-->
+                <item
+                    android:id="@+id/nav_feedback"
+                    android:icon="@drawable/ic_feedback"
+                    android:title="Feedback" />
+            </group>
+        </menu>
+    </item>
+    <!--    These are just like buttons, you click them and they perform an action, they don't stay active-->
+        <group android:id="@+id/logoutGroup">
+            <item
+                android:id="@+id/nav_logout"
+                android:icon="@drawable/ic_logout"
+
+                android:title="Logout" />
+        </group>
+</menu>

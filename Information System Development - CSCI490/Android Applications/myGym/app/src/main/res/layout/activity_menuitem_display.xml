@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/materialGray"
+    android:screenOrientation="portrait"
+    tools:context=".movesDisplay">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="20sp"
+        android:paddingTop="20sp"
+        android:paddingBottom="5dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/menuItemImage"
+                android:layout_width="match_parent"
+                android:layout_height="350sp"
+                android:background="@drawable/rounded_edges"
+                android:padding="20dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/abcrunch" />
+
+            <TextView
+                android:id="@+id/menuItemName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/menuItemImage"
+                android:layout_marginTop="20sp"
+                android:text="menuItem Name"
+                android:textColor="@android:color/black"
+                android:textSize="25sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/menuItemPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/menuItemImage"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="20sp"
+                android:text="12$"
+                android:textColor="@android:color/black"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/menuItemPreparation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/menuItemName"
+                android:layout_marginTop="-5sp"
+                android:text="Preperation Time: 7 minutes"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/menuItemNutrition"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/menuItemName"
+                android:layout_marginTop="25sp"
+                android:text="Nutritional Facts"
+                android:textColor="@android:color/black"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/menuItemProtein"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/menuItemNutrition"
+                android:layout_marginTop="2sp"
+                android:text="Protein: 6g"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/menuItemSugar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/menuItemProtein"
+                android:text="Sugar: 3.5g"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/menuItemFats"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/menuItemSugar"
+                android:text="Fats: 2g"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/menuItemCarbohydrates"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/menuItemFats"
+                android:text="Carbohydrates: 7g"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/menuItemCalories"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/menuItemCarbohydrates"
+                android:text="Calories: 355kcal"
+                android:textSize="15sp" />
+
+
+            <TextView
+                android:id="@+id/menuItemDescriptionTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/menuItemCalories"
+                android:layout_marginTop="15sp"
+                android:text="Description"
+                android:textColor="@android:color/black"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/menuItemDescription"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/menuItemDescriptionTitle"
+                android:layout_marginTop="5sp"
+                android:text="Placeholder Description"
+                android:textSize="15sp" />
+        </RelativeLayout>
+    </ScrollView>
+
+
+    <ImageView
+        android:id="@+id/menuItemClose"
+        android:layout_width="90px"
+        android:layout_height="90px"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:clickable="true"
+        android:focusable="true"
+        android:src="@drawable/ic_close_black_24dp" />
+</RelativeLayout>

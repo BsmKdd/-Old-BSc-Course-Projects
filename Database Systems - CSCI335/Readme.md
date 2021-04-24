@@ -1,0 +1,1 @@
+This is a basic database created for the Database Systems course.

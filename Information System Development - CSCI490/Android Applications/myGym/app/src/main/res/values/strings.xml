@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">myGym</string>
+
+    <string name="navigation_drawer_open">Open Nav Drawer</string>
+    <string name="navigation_drawer_close">Close Nav Drawer</string>
+    <string name="default_notification_channel_id">Tvac_CH_01</string>
+    <string-array name="timeRange">
+        <item>Show All</item>
+        <item>Today</item>
+        <item>Last Week</item>
+        <item>Last Month</item>
+    </string-array>
+</resources>

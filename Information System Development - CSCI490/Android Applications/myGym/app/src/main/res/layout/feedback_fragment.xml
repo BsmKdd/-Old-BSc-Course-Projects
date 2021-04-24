@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:fillViewport="true">
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingHorizontal="20dp">
+        <TextView
+            android:id="@+id/messageUsTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:text="Message Us:"
+            android:layout_above="@+id/formView"
+            android:textColor="@android:color/black"
+            android:textSize="25dp"
+            android:textStyle="bold"/>
+
+        <RelativeLayout
+            android:id="@+id/formView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/feedbackSubject"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:ems="10"
+                android:hint="Subject.."
+                app:boxStrokeColor="@color/colorPrimary"
+                app:counterMaxLength="250"
+                app:endIconMode="clear_text">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/feedbackSubjectET"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="text" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/feedbackContent"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:layout_below="@id/feedbackSubject"
+                android:layout_centerHorizontal="true"
+                android:layout_marginVertical="10dp"
+                android:ems="10"
+                android:hint="Feedback Content..."
+                app:boxStrokeColor="@color/colorPrimary"
+                app:counterEnabled="true"
+                app:counterMaxLength="500"
+                app:endIconMode="clear_text">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/feedbackContentET"
+                    android:layout_width="match_parent"
+                    android:layout_height="250dp"
+                    android:inputType="textMultiLine"
+                    android:maxLength="500" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/sendFeedback"
+                style="@style/Widget.MaterialComponents.Button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/feedbackContent"
+                android:layout_centerHorizontal="true"
+                android:background="@color/colorPrimary"
+                android:text="Send feedback" />
+
+            <TextView
+                android:id="@+id/callUsTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="35dp"
+                android:layout_marginBottom="10dp"
+                android:layout_alignParentStart="true"
+                android:layout_below="@id/sendFeedback"
+                android:text="Call Us:"
+                android:textColor="@android:color/black"
+                android:textSize="25dp"
+                android:textStyle="bold" />
+
+                <RelativeLayout
+                    android:id="@+id/callUsLayout"
+                    android:layout_below="@id/callUsTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="@drawable/custom_ripple">
+
+                    <ImageView
+                        android:id="@+id/callUsIcon"
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="45dp"
+                        android:src="@drawable/ic_contact" />
+
+                    <TextView
+                        android:id="@+id/callUsPhone"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_toEndOf="@+id/callUsIcon"
+                        android:text="(961) 71-100100"
+                        android:textColor="@android:color/black"
+                        android:textSize="18dp" />
+                </RelativeLayout>
+            </RelativeLayout>
+        </RelativeLayout>
+</ScrollView>

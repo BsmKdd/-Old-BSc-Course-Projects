@@ -1,0 +1,113 @@
+*{
+    font-family: 'Oswald', Helvetica, Arial, Lucida, sans-serif;
+}
+.tabs .tab a:hover, .tabs .tab a.active {
+    color: #800080;
+    background-color: #80008017 !important;
+}
+
+.tabs .tab a {
+    color: #800080;
+    text-decoration: none;
+}
+
+.tabs .indicator {
+    position: absolute;
+    bottom: 0;
+    height: 2px;
+    background-color: #d300d3;
+    will-change: left, right;
+}
+
+.tabs .tab a:focus
+{
+    background-color: rgba(227, 178, 246, 0.2);
+}
+
+input[type=search]:not(.browser-default):focus:not([readonly]),
+input[type=search]:focus:not([readonly])
+{
+    border-bottom: 1px solid #cc00cc;
+    -webkit-box-shadow: 0 1px 0 0 #cc00cc;
+    box-shadow: 0 1px 0 0 #cc00cc;
+}
+
+input[type=search]
+{
+    margin-bottom: 8px;
+}
+
+table.striped>tbody>tr:nth-child(odd)
+{
+    background-color: rgba(253, 244, 255, 0.5);
+}
+
+table.highlight>tbody>tr:hover {
+    background-color: rgba(172, 121, 172, 0.178);
+}
+
+
+td, th 
+{
+    padding: 5px 5px !important;
+    padding-left: 15px;
+}
+
+td img
+{
+    width: 55px;
+    border-radius: 50%;
+    vertical-align: middle;
+}
+
+#machinesTable td img,
+#menuItemsTable td img,
+#movesTable td img 
+{
+    border-radius: 0% !important;
+}
+
+#movesTable td img 
+{
+    width:100px
+}
+
+select:focus {
+    outline: 1px solid #e9c9f3;
+}
+
+#membersTable tr td:nth-child(1), #membersTable tr td:nth-child(9)
+{
+    text-align: center;
+}
+
+#membersTable tr td:nth-child(3), #membersTable tr td:nth-child(4)
+{
+    padding-left: 15px;
+}
+
+
+/* UL padding override - see https://github.com/Dogfalo/materialize/issues/2786#issuecomment-234809753  */
+.btn { font-size: .8em; }
+/* not sure why this is needed... */
+.material-icons { vertical-align: bottom; }
+
+#toast-container 
+{
+    top: auto !important;
+    right: auto !important;
+    bottom: 10%;
+    left:7%;  
+}
+.toast
+{
+  border: none;
+  border-radius: 3px;
+  background-color: #a000a0;
+}
+
+textarea{
+    overflow: auto !important;
+    height: 100px !important;
+}
+

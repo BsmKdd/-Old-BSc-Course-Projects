@@ -1,0 +1,20 @@
+{
+  "name": "mygymbar",
+  "version": "1.0.0",
+  "description": "myGym Bartender Desktop application",
+  "main": "main.js",
+  "build": {
+    "appId": "com.example.mygymbar"
+  },
+  "scripts": {
+    "start": "electron ."
+  },
+  "author": "myGym Senior Team",
+  "license": "ISC",
+  "dependencies": {
+    "electron": "^8.2.5",
+    "jquery": "^3.5.1",
+    "node-notifier": "^7.0.0"
+  }
+}
+

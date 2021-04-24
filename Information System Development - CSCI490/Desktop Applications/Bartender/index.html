@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>myGym Desktop</title>
+
+    <script>window.$ = window.jQuery = require('jquery');</script>
+    <!-- materialize stylesheet & icon font -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <!-- materialize theme -->
+    <link type="text/css" rel="stylesheet" href="css/bootstrap.min.css"  media="screen,projection"/>
+    <link rel="stylesheet" href="css/materialize.min.css">
+
+    <!-- tablesorter plugin -->
+    <script src="js/jquery.tablesorter.js"></script>
+    <!-- tablesorter widget file - loaded after the plugin -->
+    <script>require('./js/jquery.tablesorter.widgets.js');</script>
+
+    <!-- pager plugin -->
+    <link rel="stylesheet" href="css/jquery.tablesorter.pager.css">
+    <script src="js/jquery.tablesorter.pager.js"></script>    
+    <link type="text/css" rel="stylesheet" href="css/modal.css"  media="screen,projection"/>
+    <link type="text/css" rel="stylesheet" href="css/index.css"  media="screen,projection"/>
+
+
+
+</head>
+<body>
+
+    <ul class="tabs tabs-fixed-width tab-demo z-depth-1 mb-1">
+        <li class="tab"><a id="ordersTab" class="active" href="#orders">Orders</a></li>
+        <li class="tab"><a id="menuTab" href="#menu">Menu</a></li>
+    </ul>
+
+    <div id="orders" class="row">
+    </div>
+    <div id="menu" class="col s12">
+        <table id="menuItemsTable" class="tablesorter-filter-row tablesorter-ignoreRow highlight">
+            <thead>
+                <tr>
+                    <th id="id" class="text-center">ID</th>
+                    <th id="itemName" >Name</th>
+                    <th class="filter-false text-center" id="itemImg" >Image</th>
+                    <th class="text-center" id="itemDescription" >Description</th>
+                    <th class="text-center" id="calories" >Calories</th>
+                    <th class="text-center" id="fats" >Fats</th>
+                    <th class="text-center" id="protein" >Protein</th>
+                    <th class="text-center" id="carbohydrates" >Carbohydrates</th>
+                    <th class="text-center" id="sugar" >Sugar</th>
+                    <th class="text-center" id="time">Time</th>
+                    <th class="text-center" id="itemPrice">Price</th>
+                    <th class="text-center" id="available">Available</th>
+                    <th class="text-center">Actions</th>
+                </tr>
+                <tfoot>
+                    <tr>
+                        <th id="id" class="text-center">ID</th>
+                        <th id="itemName" >Name</th>
+                        <th class="text-center" id="itemImg" >Image</th>
+                        <th class="text-center" id="itemDescription" >Description</th>
+                        <th class="text-center">Calories</th>
+                        <th class="text-center">Fats</th>
+                        <th class="text-center">Protein</th>
+                        <th class="text-center">Carbohydrates</th>
+                        <th class="text-center">Sugar</th>
+                        <th class="text-center">Time</th>
+                        <th class="text-center">Price</th>
+                        <th class="text-center">Available</th>
+                        <th class="text-center">Actions</th>
+                    </tr>
+                    <!-- include "tablesorter-ignoreRow" class for pager rows in thead -->
+                    <tr class="tablesorter-ignoreRow">
+                      <th colspan="13" class="ts-pager tablepagerMenu form-horizontal">
+                        <button type="button" class="btn first purple"><i class="small material-icons">first_page</i></button>
+                        <button type="button" class="btn prev purple"><i class="small material-icons">navigate_before</i></button>
+                        <span class="pagedisplay"></span>
+                        <!-- this can be any element, including an input -->
+                        <button type="button" class="btn next purple"><i class="small material-icons">navigate_next</i></button>
+                        <button type="button" class="btn last purple"><i class="small material-icons">last_page</i></button>
+                        <select  style="min-width: 8%; max-width: 8%; display: inline;"  class="pagesize browser-default" title="Select page size">
+                        <option value="5">5</option>
+                        <option selected="selected" value="10">10</option>
+                          <option value="20">20</option>
+                          <option value="30">30</option>
+                          <option value="40">40</option>
+                          <option value="100">100</option>
+                        </select>
+                        <select style="min-width: 8%; max-width: 8%; display: inline;" class="pagenum browser-default" title="Select page number"></select>
+                      </th>
+                    </tr>
+                  </tfoot>
+                </tfoot>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+        <form action="" method="POST" id="uploadForm" name="uploadForm" enctype="multipart/form-data">
+            <div class="profile-userpic form-group center-align">
+                <input  name="profileImage" type="file" id="profileImage" hidden="hidden">
+            </div>
+        </form>
+        <div id="modal-menu" class="modal">
+            <div class="modal-content">
+                <form id="addMenuItemForm" class="mx-5" autocomplete="off">
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input id="name" type="text" class="validate" data-length="100" maxlength="100" required customError>
+                            <label for="name">Item Name</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s4">
+                            <input id="calories" type="number" class="validate" data-length="10" maxlength="10" required customError>
+                            <label for="calories">Calories</label>
+                        </div>
+                        <div class="input-field col s4">
+                            <input id="fats" type="number" class="validate" data-length="20" maxlength="20" required customError>
+                            <label for="fats">Fats</label>
+                        </div>
+                        <div class="input-field col s4">
+                            <input id="protein" type="number" class="validate" data-length="20" maxlength="20" required customError>
+                            <label for="protein">Protein</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s4">
+                            <input id="carbohydrates" type="number" class="validate" data-length="10" maxlength="10" required customError>
+                            <label for="carbohydrates">Carbohydrates</label>
+                        </div>
+                        <div class="input-field col s4">
+                            <input id="sugar" type="number" class="validate" data-length="20" maxlength="20" required customError>
+                            <label for="sugar">Sugar</label>
+                        </div>
+                        <div class="input-field col col-lg-4 col-12">
+                            <select id="type" name="type"  customError>
+                                <option value="meal">Meal</option>
+                                <option value="salad">Salad</option>
+                                <option value="drink">Drink</option>
+                                <option value="snackBar">Snack Bar</option>
+                            </select>
+                            <label>Category</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field text-left col col-4">
+                            <input id="price" type="number" step="0.01" class="validate" data-length="10" maxlength="10" required customError>
+                            <label for="price">Price</label>
+                        </div>
+                        <div class="input-field text-left col col-4">
+                            <input id="available" type="number" class="validate" data-length="10" maxlength="10" required customError>
+                            <label for="available">Available</label>
+                        </div>
+                        <div class="input-field text-left col col-4">
+                            <input id="prepTime" type="number" class="validate" data-length="10" maxlength="10" required customError>
+                            <label for="prepTime">Preparation Time</label>
+                        </div>
+                    </div>
+                    <div class="row mb-0">
+                        <div class="input-field col col-12">
+                        <textarea id="description" class="materialize-textarea" data-length="250" maxlength="250"  customError></textarea>
+                        <label for="description">Description</label>
+                        </div>
+                    </div>
+                    <p class="error pink-text center-align"></p>
+                    <div class="row">
+                        <div class="input-field col col-12 text-right">
+                            <button class="btn-large waves-effect  waves-light purple white-text" onclick="" type="submit" name="action">
+                            Insert<i class="material-icons right">done</i>
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-rejection" class="modal p-0 col-lg-4 col-12" style="height: auto !important; margin-top:10%">
+        <div class="modal-content" style="padding: 15px 5px 5px 5px !important;">
+            <h6 class="col">Type the reason for rejecting the order.</h6>
+            <form id="rejectForm" onsubmit="return false">
+                <div class="input-field col col-12">
+                    <input id="rejectionReason" type="text" class="validate" data-length="150" maxlength="150" required customError>
+                    <label for="rejectionReason">Reason</label>
+                </div>
+                <div class="row">
+                    <div class="input-field col col-12 text-center">
+                        <button id="btnReject" class="btn waves-effect  waves-light red white-text" type="submit" name="action">
+                        Reject<i class="material-icons right">clear</i>
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div id="myModal" class="modal">
+        <div class="modal-content" id="myModalContent">
+    
+        </div>
+    </div>
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.14.0/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+        https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/7.14.0/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.0/firebase-firestore.js"></script>   
+
+    <script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = 
+    {
+        apiKey: "AIzaSyBWk2mYsYjV3bxSBZj5MKy5Knh-LJapTzg",
+        authDomain: "mygym-97497.firebaseapp.com",
+        databaseURL: "https://mygym-97497.firebaseio.com",
+        projectId: "mygym-97497",
+        storageBucket: "mygym-97497.appspot.com",
+        messagingSenderId: "1073663096495",
+        appId: "1:1073663096495:web:fdb2e76115ae2c7400c65a",
+        measurementId: "G-NP8C8WBEYM"
+    };
+
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    firebase.analytics();
+
+    //auth and firestore references
+    const auth = firebase.auth();
+    const db = firebase.firestore();
+    </script>
+    <script type="text/javascript" src="js/materialize.min.js"></script>
+    <script type="text/javascript" src="js/loadingTables.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,1135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>myGym Desktop</title>
+
+    <script>window.$ = window.jQuery = require('jquery');</script>
+    <!-- materialize stylesheet & icon font -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <!-- materialize theme -->
+    <link type="text/css" rel="stylesheet" href="css/bootstrap.min.css"  media="screen,projection"/>
+    <link rel="stylesheet" href="css/materialize.min.css">
+
+    <!-- tablesorter plugin -->
+    <script src="js/jquery.tablesorter.js"></script>
+    <script>require('./js/jquery.tablesorter.widgets.js');</script>
+    <!-- tablesorter widget file - loaded after the plugin -->
+    <script src="js/jquery.tablesorter.widgets.js"></script>
+    <script src="js/jquery.tablesorter.pager.js"></script>    
+
+    <!-- pager plugin -->
+    <link rel="stylesheet" href="css/jquery.tablesorter.pager.css">
+    <link type="text/css" rel="stylesheet" href="css/modal.css"  media="screen,projection"/>
+    <link type="text/css" rel="stylesheet" href="css/index.css"  media="screen,projection"/>
+
+    
+    
+
+</head>
+<body>
+
+    <ul class="tabs tabs-fixed-width tab-demo z-depth-1 mb-1">
+        <li class="tab"><a id="membersTab" class="active" href="#members">Members</a></li>
+        <li class="tab"><a id="coachesTab" href="#coaches">Coaches</a></li>
+        <li class="tab"><a id="bartendersTab" href="#bartenders">Bartenders</a></li>
+        <li class="tab"><a id="workoutsTab" href="#workouts">Workouts</a></li>
+        <li class="tab"><a id="movesTab" href="#moves">Moves</a></li>
+        <li class="tab"><a id="machinesTab" href="#machines">Machines</a></li>
+        <li class="tab"><a id="menuTab" href="#menu">Menu</a></li>
+        <li class="tab"><a id="adsTab" href="#ads">PT Ads</a></li>
+        <li class="tab"><a id="messagesTab" href="#messages">messages</a></li>
+    </ul>
+
+    <div id="members" class="col s12">
+        <table id="membersTable" class="tablesorter-filter-row tablesorter-ignoreRow highlight">
+            <thead>
+                <tr>
+                    <th id="id" class="text-center">ID</th>
+                    <th id="Email">Email</th>
+                    <th id="fName">First</th>
+                    <th id="lName">Last</th>
+                    <th id="password">Password</th>
+                    <th id="phoneNumber">Phone</th>
+                    <th id="address" class="text-center">Address</th>
+                    <th id="img" class="filter-false text-center">Image</th>
+                    <th id="status" class="text-center">Activity</th>
+                    <!-- <th id="subscriptionExpire" class="text-center">Expire</th> -->
+                    <th id="registrationDate" class="text-center">Joined</th>
+                    <th class="text-center">Actions</th>
+                </tr>
+                <tfoot>
+                    <tr>
+                        <th  class="text-center">ID</th>
+                        <th>Email</th>
+                        <th>First</th>
+                        <th>Last</th>
+                        <th>Password</th>
+                        <th>Phone</th>
+                        <th class="text-center">Address</th>
+                        <th class="text-center">Image</th>
+                        <th class="text-center">Activity</th>
+                        <!-- <th class="text-center">Expire</th> -->
+                        <th class="text-center">Joined</th>
+                        <th class="text-center">Actions</th>
+                    </tr>
+                    <!-- include "tablesorter-ignoreRow" class for pager rows in thead -->
+                    <tr class="tablesorter-ignoreRow">
+                      <th colspan="11" class="ts-pager tablepagerMembers form-horizontal">
+                        <button type="button" class="btn first purple"><i class="small material-icons">first_page</i></button>
+                        <button type="button" class="btn prev purple"><i class="small material-icons">navigate_before</i></button>
+                        <span class="pagedisplay"></span>
+                        <!-- this can be any element, including an input -->
+                        <button type="button" class="btn next purple"><i class="small material-icons">navigate_next</i></button>
+                        <button type="button" class="btn last purple"><i class="small material-icons">last_page</i></button>
+                        <select  style="min-width: 8%; max-width: 8%; display: inline;"  class="pagesize browser-default" title="Select page size">
+                        <option value="5">5</option>
+                        <option selected="selected" value="10">10</option>
+                          <option value="20">20</option>
+                          <option value="30">30</option>
+                          <option value="40">40</option>
+                          <option value="100">100</option>
+                        </select>
+                        <select style="min-width: 8%; max-width: 8%; display: inline;" class="pagenum browser-default" title="Select page number"></select>
+                      </th>
+                    </tr>
+                  </tfoot>
+                </tfoot>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+        <form action="Editing Profile Actions/uploadImageAction.php" method="POST" id="uploadForm" name="uploadForm" enctype="multipart/form-data">
+            <div class="profile-userpic form-group center-align">
+                <input  name="profileImage" type="file" id="profileImage" hidden="hidden">
+            </div>
+        </form>
+        <div id="modal-signup" class="modal">
+            <div class="modal-content">
+                <form id="addMemberForm" class="mx-5" autocomplete="off">
+                    <div class="row">
+                    <div class="input-field col s6">
+                        <input id="first_name" type="text" class="validate" data-length="50" maxlength="50"  customError>
+                        <label for="first_name">First Name</label>
+                    </div>
+                    <div class="input-field col s6">
+                        <input id="last_name" type="text" class="validate" data-length="50" maxlength="50"  customError> 
+                        <label for="last_name">Last Name</label>
+                    </div>
+                    </div>
+                    <div class="row">
+                    <div class="input-field col s12">
+                        <input id="email" type="email" class="validate" data-length="150" maxlength="150" required customError>
+                        <label for="email">Email</label>
+                    </div>
+                    </div>
+                    <div class="row">
+                    <div class="input-field col s6">
+                        <input id="password" type="password" class="validate" data-length="20" maxlength="20" required customError> 
+                        <label for="password">Password</label>
+                    </div>
+                    </div>
+                    <div class="row">
+                    <div class="input-field col col-md-3">
+                        <select id="countryCodeMember" name="countryCodeMember"  customError>
+                        </select>
+                        <label>Country</label>
+                        </div>
+                    <div class="input-field col col-md-9">
+                        <input id="telephoneMember" type="tel" class="validate form-control" data-length="20" maxlength="20"  customError>
+                        <label for="telephoneMember">Telephone</label>
+                    </div>
+                    </div>             
+                    <div class="row mb-0">
+                        <div class="input-field col col-12">
+                        <textarea id="address" class="materialize-textarea" data-length="150" maxlength="150"  customError></textarea>
+                        <label for="address">Address</label>
+                        </div>
+                    </div>
+            
+                    <h6 class="text-left">Subscription Plan:</h6>
+                    <div class="row">
+                      <p>
+                        <label class="col black-text">
+                          <input id="oneMonths" value="1" class="with-gap " name="plan" type="radio"/>
+                          <span>1 month <br> 45$</span>
+                        </label>
+                      </p>
+                      <p>
+                        <label class="col black-text">
+                          <input id="threeMonths" value="3" class="with-gap " name="plan" type="radio" />
+                          <span>3 months <br> 120$</span>
+                        </label>
+                      </p>
+                      <p>
+                        <label class="col black-text">
+                          <input id="twelveMonths" value="12" class="with-gap " name="plan" type="radio"  />
+                          <span>12 months <br> 400$</span>
+                        </label>
+                      </p>
+                    </div>
+                    <p class="error pink-text center-align"></p>
+                    <div class="row">
+                        <div class="input-field col col-12 text-right">
+                            <button class="btn-large waves-effect  waves-light purple white-text" onclick="" type="submit" name="action">
+                            Insert<i class="material-icons right">done</i>
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div id="coaches" class="col s12">
+        <table id="coachesTable" class="tablesorter-filter-row tablesorter-ignoreRow highlight">
+            <thead>
+                <tr>
+                    <th id="id" class="text-center">ID</th>
+                    <th id="Email">Email</th>
+                    <th id="fName">First</th>
+                    <th id="lName">Last</th>
+                    <th id="password">Password</th>
+                    <th id="phoneNumber">Phone</th>
+                    <th id="address" class="text-center">Address</th>
+                    <th id="img" class="filter-false text-center">Image</th>
+                    <th id="expertise">Expertise</th>
+                    <th id="description" class="text-center">Description</th>
+                    <th id="salary">Salary</th>
+                    <th id="hireDate">Hired</th>
+                    <th class="text-center">Actions</th>
+                </tr>
+                <tfoot>
+                    <tr>
+                        <th  class="text-center">ID</th>
+                        <th>Email</th>
+                        <th>First</th>
+                        <th>Last</th>
+                        <th>Password</th>
+                        <th>Phone</th>
+                        <th class="text-center">Address</th>
+                        <th class="text-center">Image</th>
+                        <th>Expertise</th>
+                        <th class="text-center">Description</th>
+                        <th>Salary</th>
+                        <th>Hired</th>
+                        <th class="text-center">Actions</th>
+                    </tr>
+                    <!-- include "tablesorter-ignoreRow" class for pager rows in thead -->
+                    <tr class="tablesorter-ignoreRow">
+                      <th colspan="13" class="ts-pager tablepagerCoach form-horizontal">
+                        <button type="button" class="btn first purple"><i class="small material-icons">first_page</i></button>
+                        <button type="button" class="btn prev purple"><i class="small material-icons">navigate_before</i></button>
+                        <span class="pagedisplay"></span>
+                        <!-- this can be any element, including an input -->
+                        <button type="button" class="btn next purple"><i class="small material-icons">navigate_next</i></button>
+                        <button type="button" class="btn last purple"><i class="small material-icons">last_page</i></button>
+                        <select  style="min-width: 8%; max-width: 8%; display: inline;"  class="pagesize browser-default" title="Select page size">
+                        <option value="5">5</option>
+                        <option selected="selected" value="10">10</option>
+                          <option value="20">20</option>
+                          <option value="30">30</option>
+                          <option value="40">40</option>
+                          <option value="100">100</option>
+                        </select>
+                        <select style="min-width: 8%; max-width: 8%; display: inline;" class="pagenum browser-default" title="Select page number"></select>
+                      </th>
+                    </tr>
+                  </tfoot>
+                </tfoot>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+        <div id="modal-coach" class="modal">
+            <div class="modal-content">
+                <form id="addCoachForm" class="mx-5" autocomplete="off">
+                    <div class="row">
+                    <div class="input-field col s6">
+                        <input id="first_name" type="text" class="validate" data-length="50" maxlength="50"  customError>
+                        <label for="first_name">First Name</label>
+                    </div>
+                    <div class="input-field col s6">
+                        <input id="last_name" type="text" class="validate" data-length="50" maxlength="50"  customError> 
+                        <label for="last_name">Last Name</label>
+                    </div>
+                    </div>
+                    <div class="row">
+                    <div class="input-field col s12">
+                        <input id="email" type="email" class="validate" data-length="150" maxlength="150" required customError>
+                        <label for="email">Email</label>
+                    </div>
+                    </div>
+                    <div class="row">
+                    <div class="input-field col s6">
+                        <input id="password" type="password" class="validate" data-length="20" maxlength="20" required customError> 
+                        <label for="password">Password</label>
+                    </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s6">
+                            <input id="expertise" type="text" class="validate" data-length="20" maxlength="20"  customError> 
+                            <label for="expertise">Expertise</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                    <div class="input-field col col-md-3">
+                        <select id="countryCodeCoach" class="countryCodeCoach" name="countryCodeCoach"  customError>
+                        </select>
+                        <label>Country</label>
+                        </div>
+                    <div class="input-field col col-md-9">
+                        <input id="telephoneCoach" type="tel" class="validate form-control" data-length="20" maxlength="20"  customError>
+                        <label for="telephone">Telephone</label>
+                    </div>
+                    </div>
+                    <div class="row mb-0">
+                        <div class="input-field col col-12">
+                        <input id="salaryCoach" type="text" class="validate form-control" data-length="20" maxlength="20" required  customError></input>
+                        <label for="salaryCoach">Salary</label>
+                        </div>
+                    </div>
+                    <div class="row mb-0">
+                        <div class="input-field col col-12">
+                        <textarea id="description" class="materialize-textarea" data-length="150" maxlength="150"  customError></textarea>
+                        <label for="description">Description</label>
+                        </div>
+                    </div>             
+                    <div class="row mb-0">
+                        <div class="input-field col col-12">
+                        <textarea id="address" class="materialize-textarea" data-length="150" maxlength="150"  customError></textarea>
+                        <label for="address">Address</label>
+                        </div>
+                    </div>
+                    <p class="error pink-text center-align"></p>
+                    <div class="row">
+                        <div class="input-field col col-12 text-right">
+                            <button class="btn-large waves-effect  waves-light purple white-text" onclick="" type="submit" name="action">
+                            Insert<i class="material-icons right">done</i>
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div id="bartenders" class="col s12">
+        <table id="bartendersTable" class="tablesorter-filter-row tablesorter-ignoreRow highlight">
+            <thead>
+                <tr>
+                    <th id="id" class="text-center">ID</th>
+                    <th id="Email">Email</th>
+                    <th id="fName">First</th>
+                    <th id="lName">Last</th>
+                    <th id="password">Password</th>
+                    <th id="phoneNumber">Phone</th>
+                    <th id="address" class="text-center">Address</th>
+                    <th id="img" class="filter-false text-center">Image</th>
+                    <th id="salary">Salary</th>
+                    <th class="text-center">Actions</th>
+                </tr>
+                <tfoot>
+                    <tr>
+                        <th  class="text-center">ID</th>
+                        <th>Email</th>
+                        <th>First</th>
+                        <th>Last</th>
+                        <th>Password</th>
+                        <th>Phone</th>
+                        <th class="text-center">Address</th>
+                        <th class="text-center">Image</th>
+                        <th>Salary</th>
+                        <th class="text-center">Actions</th>
+                    </tr>
+                    <!-- include "tablesorter-ignoreRow" class for pager rows in thead -->
+                    <tr class="tablesorter-ignoreRow">
+                      <th colspan="10" class="ts-pager tablepagerBartender form-horizontal">
+                        <button type="button" class="btn first purple"><i class="small material-icons">first_page</i></button>
+                        <button type="button" class="btn prev purple"><i class="small material-icons">navigate_before</i></button>
+                        <span class="pagedisplay"></span>
+                        <!-- this can be any element, including an input -->
+                        <button type="button" class="btn next purple"><i class="small material-icons">navigate_next</i></button>
+                        <button type="button" class="btn last purple"><i class="small material-icons">last_page</i></button>
+                        <select  style="min-width: 8%; max-width: 8%; display: inline;"  class="pagesize browser-default" title="Select page size">
+                        <option value="5">5</option>
+                        <option selected="selected" value="10">10</option>
+                          <option value="20">20</option>
+                          <option value="30">30</option>
+                          <option value="40">40</option>
+                          <option value="100">100</option>
+                        </select>
+                        <select style="min-width: 8%; max-width: 8%; display: inline;" class="pagenum browser-default" title="Select page number"></select>
+                      </th>
+                    </tr>
+                  </tfoot>
+                </tfoot>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+        <form action="Editing Profile Actions/uploadImageAction.php" method="POST" id="uploadForm" name="uploadForm" enctype="multipart/form-data">
+            <div class="profile-userpic form-group center-align">
+                <input  name="profileImage" type="file" id="profileImage" hidden="hidden">
+            </div>
+        </form>
+        <div id="modal-bartender" class="modal">
+            <div class="modal-content">
+                <form id="addBartenderForm" class="mx-5" autocomplete="off">
+                    <div class="row">
+                    <div class="input-field col s6">
+                        <input id="first_name" type="text" class="validate" data-length="50" maxlength="50"  customError>
+                        <label for="first_name">First Name</label>
+                    </div>
+                    <div class="input-field col s6">
+                        <input id="last_name" type="text" class="validate" data-length="50" maxlength="50"  customError> 
+                        <label for="last_name">Last Name</label>
+                    </div>
+                    </div>
+                    <div class="row">
+                    <div class="input-field col s12">
+                        <input id="email" type="email" class="validate" data-length="150" maxlength="150" required customError>
+                        <label for="email">Email</label>
+                    </div>
+                    </div>
+                    <div class="row">
+                    <div class="input-field col s6">
+                        <input id="password" type="password" class="validate" data-length="20" maxlength="20" required customError> 
+                        <label for="password">Password</label>
+                    </div>
+                    </div>
+                    <div class="row">
+                    <div class="input-field col col-md-3">
+                        <select id="countryCodeBartender" name="countryCodeBartender"  customError>
+                        </select>
+                        <label>Country</label>
+                    </div>
+                    <div class="input-field col col-md-9">
+                        <input id="telephoneBartender" type="tel" class="validate form-control" data-length="20" maxlength="20"  customError>
+                        <label for="telephoneBartender">Telephone</label>
+                    </div>
+                    </div>
+                    <div class="row mb-0">
+                        <div class="input-field col col-12">
+                        <input id="salaryBartender" type="text" class="validate form-control" data-length="20" maxlength="20" required  customError></input>
+                        <label for="salaryBartender">Salary</label>
+                        </div>
+                    </div>             
+                    <div class="row mb-0">
+                        <div class="input-field col col-12">
+                        <textarea id="address" class="materialize-textarea" data-length="150" maxlength="150"  customError></textarea>
+                        <label for="address">Address</label>
+                        </div>
+                    </div>
+                    <p class="error pink-text center-align"></p>
+                    <div class="row">
+                        <div class="input-field col col-12 text-right">
+                            <button class="btn-large waves-effect  waves-light purple white-text" onclick="" type="submit" name="action">
+                            Insert<i class="material-icons right">done</i>
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div id="workouts" class="col s12">
+        <ul class="tabs tabs-fixed-width tab-demo z-depth-1 mb-1">
+            <li class="tab"><a id="currentWorkoutsTab" class="active" href="#currentWorkouts">Current Workouts</a></li>
+            <li class="tab"><a id="previousWorkoutsTab" href="#previousWorkouts">Previous Workouts</a></li>
+            <li class="tab"><a id="assignedWorkoutsTab" href="#assignedWorkouts">Assigned Workouts</a></li>
+        </ul>
+        <div id="currentWorkouts" class="col col-lg-6 col-12 mx-auto">
+            <table id="currentWorkoutsTable" class="tablesorter-filter-row tablesorter-ignoreRow highlight">
+                <thead>
+                    <tr>
+                        <th id="id" class="text-center">ID</th>
+                        <!-- <th id="workoutName" >Name</th> -->
+                        <th id="workoutID" class="text-center">Attached Workout</th>
+                        <th id="memberID" class="text-center">Member ID</th>
+                        <th class="text-center">Actions</th>
+
+                    </tr>
+                    <tfoot>
+                        <tr>
+                            <th class="text-center">ID</th>
+                            <!-- <th id="workoutName" >Name</th> -->
+                            <th class="text-center">Attached Workout</th>
+                            <th class="text-center">Member ID</th>
+                            <th class="text-center">Actions</th>
+                        </tr>
+                        <!-- include "tablesorter-ignoreRow" class for pager rows in thead -->
+                        <tr class="tablesorter-ignoreRow">
+                          <th colspan="4" class="ts-pager tablepagerCurrentWorkouts form-horizontal">
+                            <button type="button" class="btn first purple"><i class="small material-icons">first_page</i></button>
+                            <button type="button" class="btn prev purple"><i class="small material-icons">navigate_before</i></button>
+                            <span class="pagedisplay"></span>
+                            <!-- this can be any element, including an input -->
+                            <button type="button" class="btn next purple"><i class="small material-icons">navigate_next</i></button>
+                            <button type="button" class="btn last purple"><i class="small material-icons">last_page</i></button>
+                            <select  style="min-width: 8%; max-width: 8%; display: inline;"  class="pagesize browser-default" title="Select page size">
+                            <option value="5">5</option>
+                            <option selected="selected" value="10">10</option>
+                              <option value="20">20</option>
+                              <option value="30">30</option>
+                              <option value="40">40</option>
+                              <option value="100">100</option>
+                            </select>
+                            <select style="min-width: 8%; max-width: 8%; display: inline;" class="pagenum browser-default" title="Select page number"></select>
+                          </th>
+                        </tr>
+                      </tfoot>
+                    </tfoot>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+        <div id="previousWorkouts" class="col col-lg-8 col-12 mx-auto s12">
+            <table id="previousWorkoutsTable" class="tablesorter-filter-row tablesorter-ignoreRow highlight">
+                <thead>
+                    <tr>
+                        <th id="id" class="text-center">ID</th>
+                        <!-- <th id="workoutName" >Name</th> -->
+                        <th id="memberID" class="text-center">Member ID</th>
+                        <th id="workoutID" class="text-center">Attached Workout</th>
+                        <th id="date" class="text-center">Time Finished</th>
+                        <th class="text-center">Actions</th>
+
+                    </tr>
+                    <tfoot>
+                        <tr>
+                            <th class="text-center">ID</th>
+                            <!-- <th id="workoutName" >Name</th> -->
+                            <th class="text-center">Member ID</th>
+                            <th class="text-center">Attached Workout</th>
+                            <th class="text-center">Time Finished</th>
+                            <th class="text-center">Actions</th>
+                        </tr>
+                        <!-- include "tablesorter-ignoreRow" class for pager rows in thead -->
+                        <tr class="tablesorter-ignoreRow">
+                          <th colspan="5" class="ts-pager tablepagerPreviousWorkouts form-horizontal">
+                            <button type="button" class="btn first purple"><i class="small material-icons">first_page</i></button>
+                            <button type="button" class="btn prev purple"><i class="small material-icons">navigate_before</i></button>
+                            <span class="pagedisplay"></span>
+                            <!-- this can be any element, including an input -->
+                            <button type="button" class="btn next purple"><i class="small material-icons">navigate_next</i></button>
+                            <button type="button" class="btn last purple"><i class="small material-icons">last_page</i></button>
+                            <select  style="min-width: 8%; max-width: 8%; display: inline;"  class="pagesize browser-default" title="Select page size">
+                            <option value="5">5</option>
+                            <option selected="selected" value="10">10</option>
+                              <option value="20">20</option>
+                              <option value="30">30</option>
+                              <option value="40">40</option>
+                              <option value="100">100</option>
+                            </select>
+                            <select style="min-width: 8%; max-width: 8%; display: inline;" class="pagenum browser-default" title="Select page number"></select>
+                          </th>
+                        </tr>
+                      </tfoot>
+                    </tfoot>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+        <div id="assignedWorkouts" class="col s12">
+            <table id="assignedWorkoutsTable" class="tablesorter-filter-row tablesorter-ignoreRow highlight">
+                <thead>
+                    <tr>
+                        <th id="id" class="text-center">ID</th>
+                        <!-- <th id="workoutName" >Name</th> -->
+                        <th id="workoutID" class="text-center">Attached Workout</th>
+                        <th id="coachID" class="text-center">Coach ID</th>
+                        <th id="memberID" class="text-center">Member ID</th>
+                        <th id="time" class="text-center">Time Assigned</th>
+                        <th class="text-center">Actions</th>
+
+                    </tr>
+                    <tfoot>
+                        <tr>
+                            <th class="text-center">ID</th>
+                            <!-- <th id="workoutName" >Name</th> -->
+                            <th class="text-center">Attached Workout</th>
+                            <th class="text-center">Coach ID</th>
+                            <th class="text-center">Member ID</th>
+                            <th class="text-center">Time Assigned</th>
+                            <th class="text-center">Actions</th>
+                        </tr>
+                        <!-- include "tablesorter-ignoreRow" class for pager rows in thead -->
+                        <tr class="tablesorter-ignoreRow">
+                          <th colspan="6" class="ts-pager tablepagerAssignedWorkouts form-horizontal">
+                            <button type="button" class="btn first purple"><i class="small material-icons">first_page</i></button>
+                            <button type="button" class="btn prev purple"><i class="small material-icons">navigate_before</i></button>
+                            <span class="pagedisplay"></span>
+                            <!-- this can be any element, including an input -->
+                            <button type="button" class="btn next purple"><i class="small material-icons">navigate_next</i></button>
+                            <button type="button" class="btn last purple"><i class="small material-icons">last_page</i></button>
+                            <select  style="min-width: 8%; max-width: 8%; display: inline;"  class="pagesize browser-default" title="Select page size">
+                            <option value="5">5</option>
+                            <option selected="selected" value="10">10</option>
+                              <option value="20">20</option>
+                              <option value="30">30</option>
+                              <option value="40">40</option>
+                              <option value="100">100</option>
+                            </select>
+                            <select style="min-width: 8%; max-width: 8%; display: inline;" class="pagenum browser-default" title="Select page number"></select>
+                          </th>
+                        </tr>
+                      </tfoot>
+                    </tfoot>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div id="moves" class="col s12">
+        <table id="movesTable" class="tablesorter-filter-row tablesorter-ignoreRow highlight">
+            <thead>
+                <tr>
+                    <th id="id" class="text-center">ID</th>
+                    <th id="machineID" class="text-center">Machine ID</th>
+                    <th id="moveName">Move Name</th>
+                    <th id="moveDescription" class="text-center">Move Description</th>
+                    <th id="muscleGroup1" class="text-center">Muscle Group</th>
+                    <th id="moveImage1" class="text-center">Pos 1 Image</th>
+                    <th id="moveImage2" class="text-center">Pos 2 Image</th>
+                    <th id="moveGif" class="filter-false text-center">Move Gif</th>
+                    <th class="text-center">Actions</th>
+                </tr>
+                <tfoot>
+                    <tr>
+                        <th class="text-center">ID</th>
+                        <th class="text-center">Machine ID</th>
+                        <th>Move Name</th>
+                        <th class="text-center">Move Description</th>
+                        <th class="text-center">Muscle Group</th>
+                        <th class="text-center">Pos 1 Image</th>
+                        <th class="text-center">Pos 2 Image</th>
+                        <th class="filter-false text-center">Move Gif</th>
+                        <th class="text-center">Actions</th>
+                    </tr>
+                    <!-- include "tablesorter-ignoreRow" class for pager rows in thead -->
+                    <tr class="tablesorter-ignoreRow">
+                      <th colspan="9" class="ts-pager tablepagerMoves form-horizontal">
+                        <button type="button" class="btn first purple"><i class="small material-icons">first_page</i></button>
+                        <button type="button" class="btn prev purple"><i class="small material-icons">navigate_before</i></button>
+                        <span class="pagedisplay"></span>
+                        <!-- this can be any element, including an input -->
+                        <button type="button" class="btn next purple"><i class="small material-icons">navigate_next</i></button>
+                        <button type="button" class="btn last purple"><i class="small material-icons">last_page</i></button>
+                        <select  style="min-width: 8%; max-width: 8%; display: inline;"  class="pagesize browser-default" title="Select page size">
+                        <option value="5">5</option>
+                        <option selected="selected" value="10">10</option>
+                          <option value="20">20</option>
+                          <option value="30">30</option>
+                          <option value="40">40</option>
+                          <option value="100">100</option>
+                        </select>
+                        <select style="min-width: 8%; max-width: 8%; display: inline;" class="pagenum browser-default" title="Select page number"></select>
+                      </th>
+                    </tr>
+                  </tfoot>
+                </tfoot>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+        <form action="Editing Profile Actions/uploadImageAction.php" method="POST" id="uploadForm" name="uploadForm" enctype="multipart/form-data">
+            <div class="profile-userpic form-group center-align">
+                <input  name="profileImage" type="file" id="profileImage" hidden="hidden">
+            </div>
+        </form>
+        <div id="modal-move" class="modal">
+            <div class="modal-content">
+                <form id="addMoveForm" class="mx-5" autocomplete="off">
+                    <div class="row">
+                    <div class="input-field col s12">
+                        <input id="moveName" type="text" class="validate" data-length="50" maxlength="50"  customError>
+                        <label for="moveName">Move Name</label>
+                    </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <select id="moveDifficulty" name="moveDifficulty"  customError>
+                                <option value="Beginner">Beginner</option>
+                                <option value="Intermediate">Intermediate</option>
+                                <option value="Advanced">Advanced</option>
+                            </select>
+                            <label>Move Difficulty</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col col-lg-4 col-12">
+                            <select id="muscleGroup1" name="muscleGroup1"  customError>
+                                <option value="Chest">Chest</option>
+                                <option value="Core">Core</option>
+                                <option value="Biceps">Biceps</option>
+                                <option value="Triceps">Triceps</option>
+                                <option value="Legs">Legs</option>
+                                <option value="Forearms">Forearms</option>
+                                <option value="Calves">Calves</option>
+                                <option value="Shoulders">Shoulders</option>
+                            </select>
+                            <label>Main Muscle Group</label>
+                        </div>
+                        <div class="input-field col col-lg-8 col-12">
+                            <select id="machineID" name="machineID"  customError>
+                            </select>
+                            <label>Machine</label>
+                        </div>
+                    </div>
+                    <div class="row mb-0">
+                        <div class="input-field col col-12">
+                        <textarea id="moveDescription" class="materialize-textarea" data-length="1000" maxlength="1000"  customError></textarea>
+                        <label for="moveDescription">Move Description</label>
+                        </div>
+                    </div> 
+                    <div class="row">
+                        <div class="input-field col col-12 text-right">
+                            <button class="btn-large waves-effect  waves-light purple white-text" onclick="" type="submit" name="action">
+                            Insert<i class="material-icons right">done</i>
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div id="machines" class="col s12">
+        <table id="machinesTable" class="tablesorter-filter-row tablesorter-ignoreRow highlight">
+            <thead>
+                <tr>
+                    <th id="id" class="text-center">ID</th>
+                    <th id="machineName" >Name</th>
+                    <th id="machineCode" >QR Code</th>
+                    <th class="text-center filter-false" id="machineImage" >Image</th>
+                    <th class="text-center" id="floor" >Floor</th>
+                    <th class="text-center" id="section" >Section</th>
+                    <th class="text-center">Actions</th>
+                </tr>
+                <tfoot>
+                    <tr>
+                        <th class="text-center">ID</th>
+                        <th>Name</th>
+                        <th>QR Code</th>
+                        <th class="text-center">Image</th>
+                        <th class="text-center">Floor</th>
+                        <th class="text-center">Sectoion</th>
+                        <th class="text-center">Actions</th>
+                    </tr>
+                    <!-- include "tablesorter-ignoreRow" class for pager rows in thead -->
+                    <tr class="tablesorter-ignoreRow">
+                      <th colspan="7" class="ts-pager tablepagerMachines form-horizontal">
+                        <button type="button" class="btn first purple"><i class="small material-icons">first_page</i></button>
+                        <button type="button" class="btn prev purple"><i class="small material-icons">navigate_before</i></button>
+                        <span class="pagedisplay"></span>
+                        <!-- this can be any element, including an input -->
+                        <button type="button" class="btn next purple"><i class="small material-icons">navigate_next</i></button>
+                        <button type="button" class="btn last purple"><i class="small material-icons">last_page</i></button>
+                        <select  style="min-width: 8%; max-width: 8%; display: inline;"  class="pagesize browser-default" title="Select page size">
+                        <option value="5">5</option>
+                        <option selected="selected" value="10">10</option>
+                          <option value="20">20</option>
+                          <option value="30">30</option>
+                          <option value="40">40</option>
+                          <option value="100">100</option>
+                        </select>
+                        <select style="min-width: 8%; max-width: 8%; display: inline;" class="pagenum browser-default" title="Select page number"></select>
+                      </th>
+                    </tr>
+                  </tfoot>
+                </tfoot>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+        <form action="Editing Profile Actions/uploadImageAction.php" method="POST" id="uploadForm" name="uploadForm" enctype="multipart/form-data">
+            <div class="profile-userpic form-group center-align">
+                <input  name="profileImage" type="file" id="profileImage" hidden="hidden">
+            </div>
+        </form>
+        <div id="modal-machine" class="modal">
+            <div class="modal-content">
+                <form id="addMachineForm" class="mx-5" autocomplete="off">
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input id="name" type="text" class="validate" data-length="100" maxlength="100" required customError>
+                            <label for="name">Machine Name</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input id="code" type="text" class="validate" data-length="20" maxlength="150" required customError>
+                            <label for="code">Machine QR Code</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s6">
+                            <input id="floor" type="number" class="validate" data-length="2" maxlength="2" required customError>
+                            <label for="floor">Floor</label>
+                        </div>
+                        <div class="input-field col s6">
+                            <input id="section" type="text" class="validate" data-length="20" maxlength="20" required customError>
+                            <label for="section">Section</label>
+                        </div>
+                    </div>
+                    <p class="error pink-text center-align"></p>
+                    <div class="row">
+                        <div class="input-field col col-12 text-right">
+                            <button class="btn-large waves-effect  waves-light purple white-text" onclick="" type="submit" name="action">
+                            Insert<i class="material-icons right">done</i>
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div id="menu" class="col s12">
+        <table id="menuItemsTable" class="tablesorter-filter-row tablesorter-ignoreRow highlight">
+            <thead>
+                <tr>
+                    <th id="id" class="text-center">ID</th>
+                    <th id="itemName" >Name</th>
+                    <th class="filter-false text-center" id="itemImg" >Image</th>
+                    <th class="text-center" id="itemDescription" >Description</th>
+                    <th class="text-center" id="calories" >Calories</th>
+                    <th class="text-center" id="fats" >Fats</th>
+                    <th class="text-center" id="protein" >Protein</th>
+                    <th class="text-center" id="carbohydrates" >Carbohydrates</th>
+                    <th class="text-center" id="sugar" >Sugar</th>
+                    <th class="text-center" id="time">Time</th>
+                    <th class="text-center" id="itemPrice">Price</th>
+                    <th class="text-center" id="available">Available</th>
+                    <th class="text-center">Actions</th>
+                </tr>
+                <tfoot>
+                    <tr>
+                        <th id="id" class="text-center">ID</th>
+                        <th id="itemName" >Name</th>
+                        <th class="text-center" id="itemImg" >Image</th>
+                        <th class="text-center" id="itemDescription" >Description</th>
+                        <th class="text-center">Calories</th>
+                        <th class="text-center">Fats</th>
+                        <th class="text-center">Protein</th>
+                        <th class="text-center">Carbohydrates</th>
+                        <th class="text-center">Sugar</th>
+                        <th class="text-center">Time</th>
+                        <th class="text-center">Price</th>
+                        <th class="text-center">Available</th>
+                        <th class="text-center">Actions</th>
+                    </tr>
+                    <!-- include "tablesorter-ignoreRow" class for pager rows in thead -->
+                    <tr class="tablesorter-ignoreRow">
+                      <th colspan="13" class="ts-pager tablepagerMenu form-horizontal">
+                        <button type="button" class="btn first purple"><i class="small material-icons">first_page</i></button>
+                        <button type="button" class="btn prev purple"><i class="small material-icons">navigate_before</i></button>
+                        <span class="pagedisplay"></span>
+                        <!-- this can be any element, including an input -->
+                        <button type="button" class="btn next purple"><i class="small material-icons">navigate_next</i></button>
+                        <button type="button" class="btn last purple"><i class="small material-icons">last_page</i></button>
+                        <select  style="min-width: 8%; max-width: 8%; display: inline;"  class="pagesize browser-default" title="Select page size">
+                        <option value="5">5</option>
+                        <option selected="selected" value="10">10</option>
+                          <option value="20">20</option>
+                          <option value="30">30</option>
+                          <option value="40">40</option>
+                          <option value="100">100</option>
+                        </select>
+                        <select style="min-width: 8%; max-width: 8%; display: inline;" class="pagenum browser-default" title="Select page number"></select>
+                      </th>
+                    </tr>
+                  </tfoot>
+                </tfoot>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+        <form action="" method="POST" id="uploadForm" name="uploadForm" enctype="multipart/form-data">
+            <div class="profile-userpic form-group center-align">
+                <input  name="profileImage" type="file" id="profileImage" hidden="hidden">
+            </div>
+        </form>
+        <div id="modal-menu" class="modal">
+            <div class="modal-content">
+                <form id="addMenuItemForm" class="mx-5" autocomplete="off">
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input id="name" type="text" class="validate" data-length="100" maxlength="100" required customError>
+                            <label for="name">Item Name</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s4">
+                            <input id="calories" type="number" class="validate" data-length="10" maxlength="10" required customError>
+                            <label for="calories">Calories</label>
+                        </div>
+                        <div class="input-field col s4">
+                            <input id="fats" type="number" class="validate" data-length="20" maxlength="20" required customError>
+                            <label for="fats">Fats</label>
+                        </div>
+                        <div class="input-field col s4">
+                            <input id="protein" type="number" class="validate" data-length="20" maxlength="20" required customError>
+                            <label for="protein">Protein</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s4">
+                            <input id="carbohydrates" type="number" class="validate" data-length="10" maxlength="10" required customError>
+                            <label for="carbohydrates">Carbohydrates</label>
+                        </div>
+                        <div class="input-field col s4">
+                            <input id="sugar" type="number" class="validate" data-length="20" maxlength="20" required customError>
+                            <label for="sugar">Sugar</label>
+                        </div>
+                        <div class="input-field col col-lg-4 col-12">
+                            <select id="type" name="type"  customError>
+                                <option value="meal">Meal</option>
+                                <option value="salad">Salad</option>
+                                <option value="drink">Drink</option>
+                                <option value="snackBar">Snack Bar</option>
+                            </select>
+                            <label>Category</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field text-left col col-4">
+                            <input id="price" type="number" step="0.01" class="validate" data-length="10" maxlength="10" required customError>
+                            <label for="price">Price</label>
+                        </div>
+                        <div class="input-field text-left col col-4">
+                            <input id="available" type="number" class="validate" data-length="10" maxlength="10" required customError>
+                            <label for="available">Available</label>
+                        </div>
+                        <div class="input-field text-left col col-4">
+                            <input id="prepTime" type="number" class="validate" data-length="10" maxlength="10" required customError>
+                            <label for="prepTime">Preparation Time</label>
+                        </div>
+                    </div>
+                    <div class="row mb-0">
+                        <div class="input-field col col-12">
+                        <textarea id="description" class="materialize-textarea" data-length="250" maxlength="250"  customError></textarea>
+                        <label for="description">Description</label>
+                        </div>
+                    </div>
+                    <p class="error pink-text center-align"></p>
+                    <div class="row">
+                        <div class="input-field col col-12 text-right">
+                            <button class="btn-large waves-effect  waves-light purple white-text" onclick="" type="submit" name="action">
+                            Insert<i class="material-icons right">done</i>
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div id="ads" class="col s12">
+        <table id="adsTable" class="tablesorter-filter-row tablesorter-ignoreRow highlight">
+            <thead>
+                <tr>
+                    <th id="id" class="text-center">ID</th>
+                    <th id="Email">Email</th>
+                    <th id="name">Name</th>
+                    <th id="title">Title</th>
+                    <th id="description">Description</th>
+                    <th id="phone" class="text-center">Phone</th>
+                    <th id="img" class="filter-false text-center">Image</th>
+                    <th id="banner" class="filter-false text-center">Banner</th>
+                    <th class="text-center">Actions</th>
+                </tr>
+                <tfoot>
+                    <tr>
+                        <th  class="text-center">ID</th>
+                        <th>Email</th>
+                        <th>Name</th>
+                        <th>Title</th>
+                        <th>Description</th>
+                        <th class="text-center">Phone</th>
+                        <th class="filter-false text-center">Image</th>
+                        <th class="filter-false text-center">Banner</th>
+                        <th class="text-center">Actions</th>
+                    </tr>
+                    <tr class="tablesorter-ignoreRow">
+                      <th colspan="9" class="ts-pager tablepagerAds form-horizontal">
+                        <button type="button" class="btn first purple"><i class="small material-icons">first_page</i></button>
+                        <button type="button" class="btn prev purple"><i class="small material-icons">navigate_before</i></button>
+                        <span class="pagedisplay"></span>
+                        <button type="button" class="btn next purple"><i class="small material-icons">navigate_next</i></button>
+                        <button type="button" class="btn last purple"><i class="small material-icons">last_page</i></button>
+                        <select  style="min-width: 8%; max-width: 8%; display: inline;"  class="pagesize browser-default" title="Select page size">
+                        <option value="5">5</option>
+                        <option selected="selected" value="10">10</option>
+                          <option value="20">20</option>
+                          <option value="30">30</option>
+                          <option value="40">40</option>
+                          <option value="100">100</option>
+                        </select>
+                        <select style="min-width: 8%; max-width: 8%; display: inline;" class="pagenum browser-default" title="Select page number"></select>
+                      </th>
+                    </tr>
+                  </tfoot>
+                </tfoot>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+        <form action="Editing Profile Actions/uploadImageAction.php" method="POST" id="uploadForm" name="uploadForm" enctype="multipart/form-data">
+            <div class="profile-userpic form-group center-align">
+                <input  name="profileImage" type="file" id="profileImage" hidden="hidden">
+            </div>
+        </form>
+        <div id="modal-ad" class="modal">
+            <div class="modal-content">
+                <form id="addAdform" class="mx-5" autocomplete="off">
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input id="trainerName" type="text" class="validate" data-length="100" maxlength="100"  customError>
+                            <label for="trainerName">Full Name</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input id="email" type="email" class="validate" data-length="150" maxlength="150" required customError>
+                            <label for="email">Email</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s6">
+                            <input id="title" type="text" class="validate" data-length="20" maxlength="20"  customError> 
+                            <label for="title">Title</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                    <div class="input-field col col-md-3">
+                        <select id="countryCodeTrainer" class="countryCodeTrainer" name="countryCodeTrainer"  customError>
+                        </select>
+                        <label>Country</label>
+                    </div>
+                    <div class="input-field col col-md-9">
+                        <input id="telephoneTrainer" type="tel" class="validate form-control" data-length="20" maxlength="20"  customError>
+                        <label for="telephoneTrainer">Telephone</label>
+                    </div>
+                    </div>
+                    <div class="row mb-0">
+                        <div class="input-field col col-12">
+                        <textarea id="trainerDescription" class="materialize-textarea" data-length="1000" maxlength="1000"  customError></textarea>
+                        <label for="trainerDescription">Trainer Description</label>
+                        </div>
+                    </div> 
+                    <div class="row">
+                        <div class="input-field col col-12 text-right">
+                            <button class="btn-large waves-effect  waves-light purple white-text" onclick="" type="submit" name="action">
+                            Insert<i class="material-icons right">done</i>
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div id="messages" class="col col-12 col-lg-8 mx-auto">
+        <table id="messagesTable" class="tablesorter-filter-row tablesorter-ignoreRow highlight">
+            <thead>
+                <tr>
+                    <th id="id" class="text-center">ID</th>
+                    <th id="message" class="text-center" >Message</th>
+                    <th id="from" >From</th>
+                    <th class="text-center" id="type" >Type</th>
+                    <th class="text-center" id="time" >Time</th>
+                    <th class="text-center">Actions</th>
+                </tr>
+                <tfoot>
+                    <tr>
+                        <th class="text-center">ID</th>
+                        <th class="text-center">Message</th>
+                        <th>From</th>
+                        <th class="text-center">Type</th>
+                        <th>Time</th>
+                        <th class="text-center">Actions</th>
+                    </tr>
+                    <!-- include "tablesorter-ignoreRow" class for pager rows in thead -->
+                    <tr class="tablesorter-ignoreRow">
+                      <th colspan="6" class="ts-pager tablepagerMessages form-horizontal">
+                        <button type="button" class="btn first purple"><i class="small material-icons">first_page</i></button>
+                        <button type="button" class="btn prev purple"><i class="small material-icons">navigate_before</i></button>
+                        <span class="pagedisplay"></span>
+                        <!-- this can be any element, including an input -->
+                        <button type="button" class="btn next purple"><i class="small material-icons">navigate_next</i></button>
+                        <button type="button" class="btn last purple"><i class="small material-icons">last_page</i></button>
+                        <select  style="min-width: 8%; max-width: 8%; display: inline;"  class="pagesize browser-default" title="Select page size">
+                        <option value="5">5</option>
+                        <option selected="selected" value="10">10</option>
+                          <option value="20">20</option>
+                          <option value="30">30</option>
+                          <option value="40">40</option>
+                          <option value="100">100</option>
+                        </select>
+                        <select style="min-width: 8%; max-width: 8%; display: inline;" class="pagenum browser-default" title="Select page number"></select>
+                      </th>
+                    </tr>
+                  </tfoot>
+                </tfoot>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+
+    <div id="myModal" class="modal">
+        <div class="modal-content" id="myModalContent">
+    
+        </div>
+    </div>
+
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.14.0/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+        https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/7.14.0/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.0/firebase-functions.js"></script>
+   
+
+    <script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = 
+    {
+        apiKey: "AIzaSyBWk2mYsYjV3bxSBZj5MKy5Knh-LJapTzg",
+        authDomain: "mygym-97497.firebaseapp.com",
+        databaseURL: "https://mygym-97497.firebaseio.com",
+        projectId: "mygym-97497",
+        storageBucket: "mygym-97497.appspot.com",
+        messagingSenderId: "1073663096495",
+        appId: "1:1073663096495:web:fdb2e76115ae2c7400c65a",
+        measurementId: "G-NP8C8WBEYM"
+    };
+
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    firebase.analytics();
+
+    //auth and firestore references
+    const auth = firebase.auth();
+    const db = firebase.firestore();
+    const functions = firebase.functions();
+
+    </script>
+    <script type="text/javascript" src="js/materialize.min.js"></script>
+    <!-- <link rel="stylesheet" href="css/jquery.tablesorter.pager.css"> -->
+    <!-- <script type="text/javascript" src="js/jquery.tablesorter.js"></script>
+    <script type="text/javascript" src="js/jquery.tablesorter.widgets.js"></script>
+    <script src="js/jquery.tablesorter.pager.js"></script> -->
+    <!-- <script type="text/javascript" charset="utf8" src="DataTables/datatables.js"></script> -->
+    <script type="text/javascript" src="js/loadingTables.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+
+
+
+
+
+</body>
+</html>

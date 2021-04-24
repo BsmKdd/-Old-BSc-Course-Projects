@@ -1,0 +1,1 @@
+This includes a couple of very similar desktop applications using Electron, one of which for the bartender, and the other for an admin managing a database.

@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:screenOrientation="portrait"
+    android:paddingVertical="5dp"
+    android:paddingHorizontal="10sp">
+
+    <TextView
+        android:id="@+id/notNeededTextId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/schemaImage"
+        android:layout_marginTop="5sp"
+        android:layout_marginBottom="15sp"
+        android:text="Your Order:"
+        android:textColor="@android:color/black"
+        android:textSize="23sp"
+        android:textStyle="bold" />
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/notNeededTextId"
+        android:scaleType="fitXY">
+
+        <TextView
+            android:id="@+id/mealName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="5sp"
+            android:layout_marginBottom="15sp"
+            android:text="Meal Name"
+            android:textColor="@android:color/black"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/mealPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="5sp"
+            android:layout_marginBottom="15sp"
+            android:text="Meal Price"
+            android:textColor="@android:color/black"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/saladName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/mealName"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="5sp"
+            android:layout_marginBottom="15sp"
+            android:text="Salad Name"
+            android:textColor="@android:color/black"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/saladPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/mealPrice"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="5sp"
+            android:layout_marginBottom="15sp"
+            android:text="Salad Price"
+            android:textColor="@android:color/black"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/drinkName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/saladName"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="5sp"
+            android:layout_marginBottom="15sp"
+            android:text="Drink Name"
+            android:textColor="@android:color/black"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/drinkPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/saladPrice"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="5sp"
+            android:layout_marginBottom="15sp"
+            android:text="Drink Price"
+            android:textColor="@android:color/black"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/barName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/drinkName"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="5sp"
+            android:layout_marginBottom="5sp"
+            android:text="Bar Name"
+            android:textColor="@android:color/black"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/barPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/drinkPrice"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="5sp"
+            android:layout_marginBottom="15sp"
+            android:text="Bar Price"
+            android:textColor="@android:color/black"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/totalName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/barName"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="10sp"
+            android:layout_marginBottom="15sp"
+            android:text="Total:"
+            android:textStyle="bold"
+            android:textColor="@android:color/black"
+            android:textSize="17sp" />
+        <TextView
+            android:id="@+id/totalPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/barName"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="10sp"
+            android:layout_marginBottom="20sp"
+            android:textStyle="bold"
+            android:text="Total Price"
+            android:textColor="@android:color/black"
+            android:textSize="17sp" />
+
+        <TextView
+            android:id="@+id/orderConfirmHR"
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="@android:color/black"
+            android:layout_below="@id/totalPrice"/>
+
+        <TextView
+            android:id="@+id/totalProteinText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/orderConfirmHR"
+            android:layout_marginTop="5sp"
+            android:text="Protein: "
+            android:textColor="@android:color/black"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/totalProteinNum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/orderConfirmHR"
+            android:layout_toRightOf="@+id/totalProteinText"
+            android:layout_marginTop="5sp"
+            android:text="9.5g"
+            android:textColor="@android:color/black"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/totalSugarText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/totalProteinText"
+            android:layout_marginTop="5sp"
+            android:text="Sugar: "
+            android:textColor="@android:color/black"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/totalSugarNum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/totalProteinNum"
+            android:layout_toRightOf="@id/totalSugarText"
+            android:layout_marginTop="5sp"
+            android:text="3.5g"
+            android:textColor="@android:color/black"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/totalFatsText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/totalSugarText"
+            android:layout_marginTop="5sp"
+            android:text="Fats: "
+            android:textColor="@android:color/black"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/totalFatsNum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/totalSugarNum"
+            android:layout_toRightOf="@+id/totalFatsText"
+            android:layout_marginTop="5sp"
+            android:text="8g"
+            android:textColor="@android:color/black"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/totalCarbohydratesText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/totalFatsText"
+            android:layout_marginTop="5sp"
+            android:text="Carbohydrates: "
+            android:textColor="@android:color/black"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/totalCarbohydratesNum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/totalFatsNum"
+            android:layout_toRightOf="@+id/totalCarbohydratesText"
+            android:layout_marginTop="5sp"
+            android:text="4g"
+            android:textColor="@android:color/black"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/totalCaloriesText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/totalCarbohydratesText"
+            android:layout_marginTop="5sp"
+            android:text="Calories: "
+            android:textColor="@android:color/black"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/totalCaloriesNum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/totalCarbohydratesNum"
+            android:layout_toRightOf="@+id/totalCaloriesText"
+            android:layout_marginTop="5sp"
+            android:text="500 kcal"
+            android:textColor="@android:color/black"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/orderConfirmHR1"
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_marginTop="10sp"
+            android:background="@android:color/black"
+            android:layout_below="@id/totalCaloriesNum"/>
+
+        <TextView
+            android:id="@+id/preparationTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/orderConfirmHR1"
+            android:layout_marginTop="10sp"
+            android:layout_marginBottom="15sp"
+            android:text="Estimated Preparation Time: 12 minutes"
+            android:textColor="@android:color/black"
+            android:textSize="15sp" />
+
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/confirmOrderButton"
+            style="@style/Widget.MaterialComponents.Button"
+            android:layout_below="@id/preparationTime"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="15dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary"
+            android:text="Confirm" />
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/cancelOrderButton"
+            style="@style/Widget.MaterialComponents.Button"
+            android:layout_toLeftOf="@+id/confirmOrderButton"
+            android:layout_below="@+id/preparationTime"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="15dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary"
+            android:text="Cancel" />
+    </RelativeLayout>
+
+
+
+</RelativeLayout>

@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "corded-aquifer-263910",
+  "private_key_id": "46589fe5811cd42c5ae9f01983ea1dbf6357f82c",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQDBvA7yWTVwA6J0\nBlK5u/3Kog4X15fAl3NMBugdXADjTPG/tnHflvswI1AvcJacBQlRbtNtCrng5sMC\nLeWp9w+uq90hQ+Q3p6/ZcDGM/mAOO4N/ITGidFONFJd4X8/uUGSCkOJx2GOjwRF8\nXj6l/TWP/PA7SGxxkRR0tHf/VA/rPwK8Fxhp80jBle9cAEdUrF8L0RVegWSOJoMS\nDAdiPTXCh+sB7T98yc1i24pVHwM0g+TYJHJEgZEaDTEtUEgNheg+NOwW31dAKx6A\nbkHtxc0v2QfwZgPZOdmY+40VuvH06FrpRubbEYMAseHaGrRsHXbdFvAXVmvklI1D\nuKliWdltAgMBAAECggEALHs4hlHPuGiJOfECuPTuHEKRkE1WoShU12GllSoc5RNz\nVSR3aFIS2dZd0Iqd9fQdE9apkhl6nKX3I860cs4QSndY5gyfv1yPvlGpetkj5lip\nRDzzl7x0O4n9Di0XgXzxWt4Xs/JuTDilwmOkKDnnPKhjYwUpqviX1QTjoVrkbctL\nWiGJnpP0p9VwYAVouVTIs2HkwAOE9tlfmuodY921FGep2iQWr3FCUQd/hIvN8Q6V\neKZ2t6Xn0cV5uMmr0/Q5+XxXzoG32FxD1LYlpDd9ARE9btFw+hUaN+33KIy2H74D\nPpJu0SfhrzRuK0mfEXRAVA0fNT0IMNc2OazipsZNqQKBgQDewHmUyXQesWvLSzuH\nesYFYdUfycnuSukgGqX9EmshYSCzPIlBW1AfQhjWE5fB3QprvZKVIln2F+FCQwE4\n7TV5PhNKoh9fv8D4vjWuWpVDu74J/cFGd/JWCnBCANwhlJTTZHkiDvpIg36I7bDj\nwqFNevsIv/dEHCM2NBRzMF35hQKBgQDeps+tXdaWFkVMd82sQJUDssdDZ5Ff0xv/\ny+nnSD5v0ufyedLjConTUEtDVc6DxHFckaH0x5m76KSKAIIqFefQGnDhkXEm6VYv\nA6Hk526QFnLUmuV+uYVEKDP9O9Ly2qO0JrBN0awBm880zz1OnOGitgojOs17bg/7\nTHpzqSgwyQKBgQCEv+51Rm3GkPPtzuMmRXvX30sVS7vlII24jUkY/i4MUYccalpe\nMd4ZEtocUsbhSSsZtHu0FynH6MldJPOIio2QuPbkRqQt+ug1FZ6GTwOfvzZtW+Yg\nagFpV4U5QKvv802SgdFTA9wS9RKm5gjCY86fj0gmGclxtNcjSXxafZuzxQKBgF6E\nd9MD6+1o5OAyV4hRHjEkurxdgfQo3VD4koIRRBgac0aW+rRRK/MdueWKzpFXWjxO\nwm70MMn5V6gR0S/mfrL0FolbQaqgEWsB4r8Wk/Ps47BnVRc30F//pRpSRBm+QRJf\n/iX65UcFiq/DbiYqKQr2tlUASGyma3hlnfHtlFcpAoGAZLX7PhqCKuEwvm92JtyL\nY20vv1cIG2jfu3HbMZn2pQZV9HIi01XpIoLg/+661ZSK6qaQxCaFk1BA1x1P467I\nxzMixYt6xk6jauqJi+6IXbvArN4Cc2lqz85YtdPnY/Ffju2eGabCqrZ2JIVxiAg9\nnBYW3NUUGtdqvLV4DJH0ABM=\n-----END PRIVATE KEY-----\n",
+  "client_email": "mygym-154@corded-aquifer-263910.iam.gserviceaccount.com",
+  "client_id": "107929562850576147348",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/mygym-154%40corded-aquifer-263910.iam.gserviceaccount.com"
+}

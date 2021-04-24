@@ -1,0 +1,81 @@
+select option 
+{
+  color: #a800a8 !important;
+}
+
+.dropdown-content li > a, 
+.dropdown-content li > span
+{
+  color: #a800a8;
+}
+
+[type="radio"]:checked + span::after, 
+[type="radio"].with-gap:checked + span::after 
+{
+  background-color: #a800a8;
+}
+[type="radio"]:checked + span::after,
+[type="radio"].with-gap:checked + span::before, 
+[type="radio"].with-gap:checked + span::after 
+{
+  border: 2px solid #a800a8;
+}
+
+#modal-menu,
+#modal-rejection
+{ 
+    height: auto !important;
+}
+
+#modal-menu
+{
+    max-height: 85% !important ;
+    width: fit-content;
+    max-width: 50%;
+}
+
+.dropdown-content{
+    max-height: 450px; 
+}
+
+/* label color */
+.input-field label {
+    color: #a800a8;
+}
+/* label focus color */
+.input-field input:focus + label, 
+.input-field textarea:focus + label {
+    color: #a800a8 !important;
+}
+/* label underline focus color */
+
+
+.input-field input:focus, 
+.input-field textarea:focus {
+    border-bottom: 1px solid #a800a8 !important;
+    box-shadow: 0 1px 0 0 #a800a8 !important;
+}
+/* valid color */
+.input-field input.valid{
+    border-bottom: 1px solid #dd00dd !important;
+    box-shadow: 0 1px 0 0 #dd00dd !important;
+}
+/* invalid color */
+/* .input-field input.invalid {
+    border-bottom: 1px solid rgb(255, 0, 0) !important;
+    box-shadow: 0 1px 0 0 rgb(255, 0, 0) !important;
+} */
+/* icon prefix focus color */
+.input-field .prefix.active {
+    color: #000;
+}
+
+#myModal
+{
+    height: auto;
+}
+
+.dropdown-content{
+    max-height: 250px; 
+}
+

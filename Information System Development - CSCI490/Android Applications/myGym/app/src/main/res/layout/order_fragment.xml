@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="5dp"
+    android:screenOrientation="portrait"
+    android:orientation="vertical"
+    android:background="@color/materialGray">
+
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/search"
+        android:paddingBottom="55dp"
+        android:background="@color/materialGray">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ProgressBar
+                android:id="@+id/menuItemProgressBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true" />
+
+            <TextView
+                android:id="@+id/mealTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="10dp"
+                android:text="Meals"
+                android:textColor="@android:color/black"
+                android:textSize="25dp"
+                android:textStyle="bold" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/menuMealItemRecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/mealTV"
+                android:layout_marginTop="2dp"
+                android:orientation="horizontal" />
+
+            <TextView
+                android:id="@+id/saladTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/menuMealItemRecyclerView"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="25dp"
+                android:text="Salads"
+                android:textColor="@android:color/black"
+                android:textSize="25dp"
+                android:textStyle="bold" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/menuSaladItemRecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/saladTV"
+                android:layout_marginTop="2dp"
+                android:orientation="horizontal" />
+
+            <TextView
+                android:id="@+id/drinkTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/menuSaladItemRecyclerView"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="25dp"
+                android:text="Drinks"
+                android:textColor="@android:color/black"
+                android:textSize="25dp"
+                android:textStyle="bold" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/menuDrinkItemRecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/drinkTV"
+                android:layout_marginTop="2dp"
+                android:orientation="horizontal" />
+
+            <TextView
+                android:id="@+id/barTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/menuDrinkItemRecyclerView"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="25dp"
+                android:text="Snack Bars"
+                android:textColor="@android:color/black"
+                android:textSize="25dp"
+                android:textStyle="bold" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/menuBarItemRecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/barTV"
+                android:layout_marginTop="2dp"
+                android:orientation="horizontal" />
+
+        </RelativeLayout>
+    </ScrollView>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/search"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:ems="10"
+        app:boxBackgroundColor="@android:color/white"
+        app:boxStrokeColor="@color/colorPrimary"
+        app:endIconMode="clear_text"
+        app:hintEnabled="false"
+        app:startIconDrawable="@drawable/ic_search_black_24dp">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/searchMenuET"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Search..."
+            android:inputType="textEmailAddress" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="15px"
+        android:layout_marginBottom="10px"
+        android:rowCount="1"
+        android:columnCount="4"
+        android:layout_alignParentBottom="true">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/viewOrderButton"
+            style="@style/Widget.MaterialComponents.Button"
+            android:background="@color/colorPrimary"
+            android:text="View Order"
+            android:layout_row="0"
+            android:layout_column="0"
+            android:layout_columnWeight="100"
+            android:layout_marginRight="15dp"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Button"
+            android:textColor="@android:color/white"
+            android:textSize="15dp" />
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/clearOrderButton"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_row="0"
+            android:layout_column="1"
+            android:layout_columnWeight="1"
+            android:background="@color/colorPrimary"
+            android:text="Clear"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Button"
+            android:textColor="@color/colorPrimary"
+            android:textSize="15dp" />
+
+    </GridLayout>
+
+
+
+</RelativeLayout>

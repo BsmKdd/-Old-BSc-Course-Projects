@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.swiperefreshlayout.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/previousWorkoutSwipeRefreshLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/materialGray"
+    android:orientation="vertical"
+    android:padding="15dp"
+    android:screenOrientation="portrait">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <Spinner
+            android:id="@+id/previousWorkoutRangeSpinner"
+            style="@style/spinner_style"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:popupBackground="@android:color/white"
+            android:entries="@array/timeRange" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/previousWorkoutPreview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/previousWorkoutRangeSpinner"
+            android:scrollbars="vertical" />
+
+        <TextView
+            android:id="@+id/emptyPreviousWorkoutTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:text="No workouts finished."
+            android:textSize="25sp"
+            android:visibility="gone" />
+
+
+        <ProgressBar
+            android:id="@+id/previousWorkoutProgress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true" />
+
+
+
+    </RelativeLayout>
+</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>

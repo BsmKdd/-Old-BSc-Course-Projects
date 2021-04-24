@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:orientation="vertical"
+android:screenOrientation="portrait"
+android:background="@color/materialGray"
+android:paddingBottom="5dp"
+tools:context=".movesDisplay">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:paddingHorizontal="20sp"
+        android:paddingTop="20sp"
+        android:paddingBottom="5dp"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingBottom="50dp">
+
+
+            <pl.droidsonroids.gif.GifImageView
+                android:id="@+id/moveImage"
+                android:layout_width="match_parent"
+                android:layout_height="350sp"
+                android:background="@drawable/rounded_edges"
+                android:padding="20dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/abcrunch" />
+
+            <TextView
+                android:id="@+id/moveName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/moveImage"
+                android:layout_marginTop="20sp"
+                android:text="Move Title"
+                android:textColor="@android:color/black"
+                android:textSize="25sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/moveMuscleTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/moveName"
+                android:layout_marginTop="20sp"
+                android:text="Main Targeted Muscle Group"
+                android:textColor="@android:color/black"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/moveMainMuscle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/moveMuscleTitle"
+                android:layout_marginTop="5sp"
+                android:text="Placeholder Muscle"
+                android:textSize="15sp" />
+
+
+            <TextView
+                android:id="@+id/moveEquipmentTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/moveMainMuscle"
+                android:layout_marginTop="20sp"
+                android:text="Equipment"
+                android:textColor="@android:color/black"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/moveEquipment"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/moveEquipmentTitle"
+                android:paddingVertical="5sp"
+                android:paddingRight="5dp"
+                android:paddingLeft="0dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:text="Placeholder Equipment"
+                android:textColor="@color/colorPrimary"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/moveDescriptionTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/moveEquipment"
+                android:layout_marginTop="15sp"
+                android:text="Description"
+                android:textColor="@android:color/black"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/moveDescription"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/moveDescriptionTitle"
+                android:layout_marginTop="5sp"
+                android:text="Placeholder Description"
+                android:textSize="15sp" />
+        </RelativeLayout>
+
+    </ScrollView>
+
+
+    <ImageView
+        android:id="@+id/moveClose"
+        android:layout_width="90px"
+        android:layout_height="90px"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:clickable="true"
+        android:focusable="true"
+        android:src="@drawable/ic_close_black_24dp" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/addToCurrentWorkout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20sp"
+        android:text="Add to current workout"
+        android:layout_alignParentBottom="true"/>
+</RelativeLayout>

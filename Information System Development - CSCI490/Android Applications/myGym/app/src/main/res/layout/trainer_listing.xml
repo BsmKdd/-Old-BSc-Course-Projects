@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="4sp"
+    android:screenOrientation="portrait"
+    android:orientation="vertical">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/hireTrainerCard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:tag="test">
+
+        <RelativeLayout
+            android:id="@+id/hireTrainerLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="0dp">
+
+            <RelativeLayout
+                android:id="@+id/trainerShown"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:background="@drawable/custom_ripple">
+
+                <ImageView
+                    android:id="@+id/hireTrainerImage"
+                    android:layout_width="match_parent"
+                    android:layout_height="223dp"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/personaltrainer" />
+
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/hireTrainerImage"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginEnd="10dp"
+                    android:src="@drawable/ic_keyboard_arrow_down_black_24dp" />
+
+                <RelativeLayout
+                    android:id="@+id/trainerNameTitleLayout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/hireTrainerImage"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="15dp">
+
+                    <TextView
+                        android:id="@+id/hireTrainerName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_toRightOf="@id/hireTrainerImageCircle"
+                        android:text="John Doe"
+                        android:textColor="@android:color/black"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:id="@+id/hireTrainerTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/hireTrainerName"
+                        android:layout_marginLeft="10dp"
+                        android:layout_toRightOf="@id/hireTrainerImageCircle"
+                        android:text="Professional Weight Lifter"
+                        android:textSize="15sp" />
+
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/hireTrainerImageCircle"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:layout_alignParentStart="true"
+                        android:layout_marginTop="0dp"
+                        android:src="@drawable/personaltrainer" />
+
+                </RelativeLayout>
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:id="@+id/trainerHidden"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/trainerShown"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginBottom="15dp">
+
+                <TextView
+                    android:id="@+id/trainerDescription"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="John Doe is a multiple-use name that is used when the true name of a person is unknown or is being intentionally concealed. In the context of law enforcement in the United States, such name is often used to refer to a corpse whose identity is unknown or unconfirmed." />
+
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_below="@+id/trainerDescription"
+                    android:layout_marginTop="5dp"
+                    android:background="#D3D3D3" />
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/trainerDescription"
+                    android:layout_marginTop="15dp">
+
+                    <RelativeLayout
+                        android:id="@+id/callTrainerLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:foreground="@drawable/custom_ripple"
+
+                        android:paddingVertical="6dp">
+
+                        <ImageView
+                            android:id="@+id/callTrainerIcon"
+                            android:layout_width="35dp"
+                            android:layout_height="35dp"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="45dp"
+                            android:src="@drawable/ic_contact" />
+
+                        <TextView
+                            android:id="@+id/trainerPhone"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_toEndOf="@+id/callTrainerIcon"
+                            android:text="(961) 71-100100"
+                            android:textColor="@android:color/black"
+                            android:textSize="18dp" />
+                    </RelativeLayout>
+
+
+                    <RelativeLayout
+                        android:id="@+id/mailTrainerLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/callTrainerLayout"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:foreground="@drawable/custom_ripple"
+                        android:paddingVertical="6dp">
+
+                        <ImageView
+                            android:id="@+id/mailTrainerIcon"
+                            android:layout_width="35dp"
+                            android:layout_height="35dp"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="45dp"
+                            android:src="@drawable/ic_mail_black_24dp" />
+
+                        <TextView
+                            android:id="@+id/trainerMail"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_toEndOf="@+id/mailTrainerIcon"
+                            android:text="JohnDoe@gmail.com"
+                            android:textColor="@android:color/black"
+                            android:textSize="18dp" />
+                    </RelativeLayout>
+                </RelativeLayout>
+
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
+</RelativeLayout>

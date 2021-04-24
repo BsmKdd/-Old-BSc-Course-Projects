@@ -1,0 +1,18 @@
+{
+  "name": "mygym",
+  "version": "1.0.0",
+  "description": "myGym Desktop Application",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "author": "myGym Senior Team",
+  "license": "ISC",
+  "dependencies": {
+    "electron": "^8.2.1",
+    "electron-packager": "^14.2.1",
+    "firebase-functions": "^3.6.1",
+    "jquery": "^3.5.0",
+    "mysql": "^2.18.1"
+  }
+}

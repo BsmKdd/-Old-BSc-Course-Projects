@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:screenOrientation="portrait"
+    android:orientation="vertical">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/workoutCard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:tag="test">
+
+        <RelativeLayout
+            android:id="@+id/workoutLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="@drawable/custom_ripple">
+
+            <ImageView
+                android:id="@+id/workoutImage"
+                android:layout_width="match_parent"
+                android:layout_height="173dp"
+                android:adjustViewBounds="true"
+                android:src="@drawable/personaltrainer" />
+
+            <RelativeLayout
+                android:id="@+id/trainerNameTitleLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/workoutImage"
+                android:layout_alignParentStart="true"
+                android:padding="10dp">
+
+                <TextView
+                    android:id="@+id/assignedByText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5sp"
+
+                    android:text="Assigned By: "
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/assignedBy"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5sp"
+                    android:layout_toRightOf="@+id/assignedByText"
+                    android:text="CoachFname CoachLName"
+                    android:textColor="@android:color/black"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/dateTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/assignedBy"
+                    android:layout_marginBottom="5sp"
+                    android:text="Assigned on: "
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/assignedDate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/assignedBy"
+                    android:layout_marginBottom="5sp"
+                    android:layout_toRightOf="@+id/dateTitle"
+                    android:text="Thursday 6th 16:20:04"
+                    android:textColor="@android:color/black"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/moveCountText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/assignedDate"
+                    android:text="Moves: "
+                    android:textColor="@android:color/black"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/movesCount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/assignedDate"
+                    android:layout_toRightOf="@+id/moveCountText"
+                    android:text="6"
+                    android:textColor="@android:color/black"
+                    android:textSize="15sp" />
+
+
+            </RelativeLayout>
+
+
+        </RelativeLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
+</RelativeLayout>
